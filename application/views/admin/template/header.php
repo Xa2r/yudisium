@@ -23,6 +23,9 @@
     <!-- FontAwesome -->
     <link rel="stylesheet" href="<?= base_url(); ?>assets/fonts/fontawesome/css/all.css">
     <link rel="stylesheet" href="<?= base_url(); ?>assets/fonts/fontawesome/css/all.min.css">
+
+    <!-- Google font -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400&family=Roboto&display=swap" rel="stylesheet">
     
     <!-- https://code.jquery.com/jquery-3.3.1.js -->
     <!-- https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js -->

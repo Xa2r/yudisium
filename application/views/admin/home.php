@@ -1,6 +1,6 @@
-<div class="page-content">
+<div class="page-content home">
   <div class="post text">
-      	<div class="alert alert-danger">
+      	<div class="alert alert-success">
       <strong>Selamat datang - </strong> Di halaman administrator E-Yudisium Sekolah Tinggi Teknologi Adisutjipto Yogyakarta
   </div>
 

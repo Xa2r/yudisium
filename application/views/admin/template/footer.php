@@ -7,6 +7,7 @@
               </div>
           </div>
   </footer>
+  </div>
 
       <!-- Bootstrap core JavaScript
     ================================================== -->
@@ -79,5 +80,9 @@
   
 
 </body>
-<span class="gr__tooltip"><span class="gr__tooltip-content"></span><i class="gr__tooltip-logo"></i><span class="gr__triangle"></span></span>
+  <span class="gr__tooltip">
+    <span class="gr__tooltip-content"></span>
+    <i class="gr__tooltip-logo"></i>
+    <span class="gr__triangle"></span>
+  </span>
 </html>

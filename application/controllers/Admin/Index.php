@@ -75,13 +75,19 @@ class Index extends CI_Controller {
     public function laboran()
     {
         $data['admin'] = $this->Login->getSessionAdmin($this->session->userdata('username'));
+        $this->load->view('admin/template/header');
+        $this->load->view('admin/sidebar', $data);
         $this->load->view('admin/laboran', $data);
+        $this->load->view('admin/template/footer');
     }
 
     public function update()
     {
         $data['admin'] = $this->Login->getSessionAdmin($this->session->userdata('username'));
+        $this->load->view('admin/template/header');
+        $this->load->view('admin/sidebar', $data);
         $this->load->view('admin/edit_profile', $data);
+        $this->load->view('admin/template/footer');
     }
 
     public function getMahasiswaById()
