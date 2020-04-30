@@ -26,4 +26,14 @@ class Select extends CI_Model
                 ->result_array();
 
     }
+
+    public function getYudisiumMahasiswaById()
+    {
+        $id_user = $this->input->post('id_user');
+
+        $userId = $this->db->get_where('sia.d_yud_mahasiswa', array('nim' => $id_user))
+                    ->row_array();
+
+        return $userId;
+    }
 }

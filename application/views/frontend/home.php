@@ -45,7 +45,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
               <ul class="nav navbar-nav navbar-right">
                 <li class="dropdown">
-                  <a href="<?= base_url('index') ?>">Logout</a>
+                  <a href="<?= base_url('logout_user') ?>">Logout</a>
                 </li>
               </ul>
 

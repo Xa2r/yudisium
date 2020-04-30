@@ -67,6 +67,8 @@ $route['get_mahasiswa'] = 'admin/index/getMahasiswaById';
 /* frontend */
 $route['index'] = 'index';
 $route['login'] = 'index/login';
+$route['form_login'] = 'index/formLogin';
 $route['home'] = 'index/home';
 $route['form_biodata'] = 'index/biodata';
 $route['list_yudisium'] = 'index/list';
+$route['logout_user'] = 'index/logout';

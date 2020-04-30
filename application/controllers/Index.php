@@ -16,22 +16,59 @@ class Index extends CI_Controller {
         $this->load->helper('form');
         $this->load->helper('url');
         $this->load->model('Select');
+        $this->load->model('Login');
 		
 	}
 
     public function index()
     {
-        $this->load->view('index');
+        if ($this->session->userdata('id_user')) {
+            $this->load->view('frontend/home');
+        } else {
+            $this->load->view('index');
+        }
+    }
+
+    public function formLogin()
+    {
+        if ($this->session->userdata('id_user')) {
+            $this->load->view('frontend/home');
+        } else {
+            $this->load->view('frontend/login');
+        }
     }
 
     public function login()
     {
-        $this->load->view('frontend/login');
+        $userId = $this->Select->getYudisiumMahasiswaById();
+
+        if (!$userId) {
+            $this->session->set_flashdata('danger', '<small>Maaf, Anda Belum Terdaftar sebagai peserta yudisium, silahkan menghubungi jurusan..!!!</small>');
+            redirect('form_login');
+        } else {
+            $user = $this->Login->loginUser();
+            if ($user['msg'] == 'success') {
+                $data = array(
+                    'id_user' => $user['data']['id_user']
+                );
+                $this->session->set_userdata($data);
+                $this->load->view('frontend/home');
+            } else {
+                $this->session->set_flashdata('danger', '<small>Username or password not correct</small>');
+                redirect('form_login');
+            }
+        }
     }
 
     public function home()
     {
         $this->load->view('frontend/home');
+    }
+
+    public function logout()
+    {
+        $this->session->unset_userdata('id_user');
+        redirect('form_login');
     }
 
     public function biodata()
