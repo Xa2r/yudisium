@@ -1,4 +1,4 @@
-<div class="page-content">
+<div class="page-content active">
       <?php $this->load->view('admin/template/flash-message'); ?>
       <a style="margin-bottom:5px" class="btn btn-primary btn-sm" href="#" data-toggle="modal" data-target="#tambahkategori">Tambahkan Data</a>
     <div id="example_wrapper" class="dataTables_wrapper no-footer">
@@ -38,13 +38,13 @@
           ?>
       
         <tr role="row" class="odd">
-          <th width="50px" class="sorting_1"><?= $no; ?></th>
+          <th style="width:50px" class="sorting_1"><?= $no; ?></th>
             <td><?= $prodi; ?></td>
             <td><?= $nama_kategori; ?></td>
             <td><?= $status; ?></td>
             <td><?= $status_upload; ?></td>
             <td><?= $format; ?></td>
-            <td width="110px"><a class="open-AddBookDialog btn btn-success btn-xs" data-id="1" data-id1="Semua Jurusan" data-id2="Surat Bebas Keuangan" data-id3="KEU" data-id4="A" data-id5="T" data-toggle="modal" href="#" data-target="#editkategori">Edit</a>
+            <td style="width:110px"><a class="open-AddBookDialog btn btn-success btn-xs" data-id="1" data-id1="Semua Jurusan" data-id2="Surat Bebas Keuangan" data-id3="KEU" data-id4="A" data-id5="T" data-toggle="modal" href="#" data-target="#editkategori">Edit</a>
               <a class="btn btn-danger btn-xs" href="index.php?view=kategoriyudisium&amp;deletea=1">Delete</a>
             </td>
         </tr>
@@ -190,11 +190,10 @@
         </div>
       </div>
     </div>
-</div>
+
 <script type="text/javascript">
   $(document).ready(function() {
     $('#example').DataTable();
 } );
 </script>    
-    </div>
-</div> <!-- /container -->
+  </div> <!-- /container -->
