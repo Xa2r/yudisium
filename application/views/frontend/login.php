@@ -51,7 +51,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                   </ul>
                 </li> -->
                 
-                <li><a href="<?= base_url('login') ?>"><i class="glyphicon glyphicon-off"></i> Login</a></li>
+                <li><a href="<?= base_url('form_login') ?>"><i class="glyphicon glyphicon-off"></i> Login</a></li>
               </ul>
 
               
@@ -77,12 +77,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <div class="alert alert-success">
           <strong>Form Login Mahasiswa</strong>
         </div>
-            <form action="<?= base_url('home') ?>" method="POST" class="form-horizontal" role="form">
+        <?php $this->load->view('admin/template/flash-message'); ?>
+            <form action="<?= base_url('login') ?>" method="POST" class="form-horizontal" role="form">
                 
                 <div class="form-group">
-                <label for="inputEmail3" class="col-sm-3 control-label">Username</label>
+                <label for="id_user" class="col-sm-3 control-label">Username</label>
                 <div class="input-group col-lg-9">
-                    <div class="col-xs-8"><input type="text" class="form-control" id="inputPassword3" name="a" placeholder="Masukkan Username" required=""></div>
+                    <div class="col-xs-8"><input type="text" class="form-control" id="id_user" name="id_user" placeholder="Masukkan Username" required=""></div>
                 </div>
                 </div>
 
@@ -100,10 +101,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 
 
                 <div class="form-group">
-                  <label for="inputEmail3" class="col-sm-3 control-label">Password</label>
+                  <label for="password" class="col-sm-3 control-label">Password</label>
                 <div class="input-group col-lg-9">
                     <div class="col-xs-8">
-                        <input type="password" class="form-control" id="inputPassword3" name="b" placeholder="Masukkan Password" required="">
+                        <input type="password" class="form-control" id="password" name="password" placeholder="Masukkan Password" required="">
                     </div>
                 </div>
                 </div>

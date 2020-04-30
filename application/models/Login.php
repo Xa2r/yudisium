@@ -64,4 +64,47 @@ class Login extends CI_Model
 
         return $auth->result()[0];
     }
+
+    public function loginUser()
+    {
+        $id_user = $this->input->post('id_user');
+        $password = $this->input->post('password');
+
+        $user = $this->db->get_where('sia.d_user_portal', array('id_user' => $id_user))
+                ->row_array();
+
+        if ($user) {
+            if ($password == $user['password']) {
+                $result = array(
+                    'msg' => 'success',
+                    'data' => $user
+                );
+            } else {
+                $result = array(
+                    'msg' => 'error'
+                );
+            }
+        } else {
+            $result = array(
+                'msg' => 'error'
+            );
+        }
+
+        return $result;
+    }
+
+    public function getSessionUser($session)
+    {
+        $session = $this->db->get_where('sia.d_user_portal', array('id_user' => $session))
+                    ->result();
+
+
+        if ($session) {
+            $session = $session[0];
+        } else {
+            $session = $session;
+        }
+
+        return $session;
+    }
 }

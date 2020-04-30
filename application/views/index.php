@@ -41,7 +41,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 <li><a href="<?= base_url('index') ?>"><i class="glyphicon glyphicon-home"></i> Home Page</a></li>
 
 
-                <li><a href="<?= base_url('login') ?>"><i class="glyphicon glyphicon-off"></i> Login</a></li>
+                <li><a href="<?= base_url('form_login') ?>"><i class="glyphicon glyphicon-off"></i> Login</a></li>
               </ul>
 
 
@@ -68,7 +68,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     
       <h1 class="title">SELAMAT DATANG DI SYSTEM YUDISIUM ONLINE</h1>
       <p class="paragraph" style="text-align:center">
-      <a class="pull-center btn btn-success btn-md" href="<?= base_url('login') ?>">Silahkan LOGIN menggunakan akun Portal Mahasiswa anda.</a>
+      <a class="pull-center btn btn-success btn-md" href="<?= base_url('form_login') ?>">Silahkan LOGIN menggunakan akun Portal Mahasiswa anda.</a>
     </p>
     <br><br>
     <center><img src="<?= base_url('assets/images/alur.png') ?>" width="1024"></center><br><hr><br>
