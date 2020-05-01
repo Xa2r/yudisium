@@ -17,6 +17,7 @@ class Index extends CI_Controller {
         $this->load->helper('url');
         $this->load->model('Select');
         $this->load->model('Login');
+        $this->load->model('Update');
 		
 	}
 
@@ -43,7 +44,7 @@ class Index extends CI_Controller {
         $userId = $this->Select->getYudisiumMahasiswaById();
 
         if (!$userId) {
-            $this->session->set_flashdata('danger', '<small>Maaf, Anda Belum Terdaftar sebagai peserta yudisium, silahkan menghubungi jurusan..!!!</small>');
+            $this->session->set_flashdata('danger', '<small>Sorry, you haven`t registered as a participant of the graduation, please contact the department</small>');
             redirect('form_login');
         } else {
             $user = $this->Login->loginUser();
@@ -73,13 +74,29 @@ class Index extends CI_Controller {
 
     public function biodata()
     {
-        $this->load->view('frontend/form_biodata');
+        $nim = $this->session->userdata('id_user');
+        $data['user'] = $this->Select->getMahasiswaById($nim);
+        $this->load->view('frontend/form_biodata', $data);
+    }
+
+    public function update()
+    {
+        $nim = $this->session->userdata('id_user');
+        $update = $this->Update->updateMahasiswa($nim);
+        if (!$update) {
+            $this->session->set_flashdata('danger', 'Data gagal diupdate');
+            redirect('form_biodata');
+        } else {
+            $this->session->set_flashdata('success', 'Data berhasil diupdate');
+            redirect('form_biodata');
+        }
     }
 
     public function list()
     {
-        $data['request'] = [json_decode($this->curl->simple_get($this->API_KEUANGAN.'14030001')),
-                                json_decode($this->curl->simple_get($this->API_PERPUSTAKAAN.'14030001'))];
+        $nim = $this->session->userdata('id_user');
+        $data['request'] = [json_decode($this->curl->simple_get($this->API_KEUANGAN.$nim)),
+                                json_decode($this->curl->simple_get($this->API_PERPUSTAKAAN.$nim))];
         $data['kategori'] = $this->Select->getCategory();
         $this->load->view('frontend/list_yudisium', $data);
     }
