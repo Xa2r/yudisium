@@ -24,6 +24,7 @@ class Index extends CI_Controller {
     public function index()
     {
         if ($this->session->userdata('id_user')) {
+             $this->load->view('frontend/templates/header');
             $this->load->view('frontend/home');
         } else {
             $this->load->view('index');
@@ -33,6 +34,7 @@ class Index extends CI_Controller {
     public function formLogin()
     {
         if ($this->session->userdata('id_user')) {
+            $this->load->view('frontend/templates/header');
             $this->load->view('frontend/home');
         } else {
             $this->load->view('frontend/login');
@@ -53,6 +55,7 @@ class Index extends CI_Controller {
                     'id_user' => $user['data']['id_user']
                 );
                 $this->session->set_userdata($data);
+                 $this->load->view('frontend/templates/header');
                 $this->load->view('frontend/home');
             } else {
                 $this->session->set_flashdata('danger', '<small>Username or password not correct</small>');
@@ -63,19 +66,21 @@ class Index extends CI_Controller {
 
     public function home()
     {
+         $this->load->view('frontend/templates/header');
         $this->load->view('frontend/home');
     }
 
     public function logout()
     {
         $this->session->unset_userdata('id_user');
-        redirect('form_login');
+        redirect('index');
     }
 
     public function biodata()
     {
         $nim = $this->session->userdata('id_user');
         $data['user'] = $this->Select->getMahasiswaById($nim);
+        $this->load->view('frontend/templates/header');
         $this->load->view('frontend/form_biodata', $data);
     }
 
