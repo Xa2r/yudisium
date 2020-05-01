@@ -1,35 +1,35 @@
-<div class="page-content">
+<div class="page-content edit-profile">
         <div class="row">
             <div class="col-md-12">
                 <article>			
                 <div class="alert alert-success">
                     Setting Account Login
                 </div>
-                                <form action='' method='POST' class="form-horizontal" role="form">
-                                    <div class="form-group">
-                                    <label for='inputEmail3' class='col-sm-2 control-label'>Username</label>
-                                        <div class="input-group col-lg-9">
-                                        <div class="col-lg-5"><input type="text" class="form-control" value='admin' name='username' placeholder="Masukkan NIDN" required></div>
-                                        </div>
-                                    </div>
-
-                                    <div class="form-group">
-                                    <label for='inputEmail3' class='col-sm-2 control-label'>Ganti Password</label>
-                                        <div class="input-group col-lg-9">
-                                        <div class="col-lg-6"><input type="password" class="form-control " name='password' placeholder="Kosongkan Jika Tidak Diganti"></div>
-                                        </div>
-                                    </div>
-
-                                    
-                                    
-
-                                    <div class="form-group">
-                                    <label for='inputEmail3' class='col-sm-2 control-label'></label>
-                                        <div class="col-sm-offset col-sm-9"><hr>
-                                        <button type="submit" name='update' class="btn btn-success">Update</button><br><br>
-                                        </div>
-                                    </div>
-                                </form>
+                    <form>
+                      <div class="form-group row">
+                        <label for="email" class="col-sm-3 col-form-label">Email</label>
+                        <div class="col-sm-9">
+                          <input type="email" class="form-control" id="email" placeholder="Masukan email">
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <label for="password" class="col-sm-3 col-form-label">Password</label>
+                        <div class="col-sm-9">
+                          <input type="password" class="form-control" id="password" placeholder="Masukan assword">
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <label for="konfirmasi" class="col-sm-3 col-form-label">Konfirmasi Password</label>
+                        <div class="col-sm-9">
+                          <input type="password" class="form-control" id="konfirmasi" placeholder="Konfirmasi password">
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <div class="col-sm-10">
+                          <button type="submit" class="btn btn-primary">Update</button>
+                        </div>
+                      </div>
+                    </form>
                 </article>
             </div>
         </div>
