@@ -54,9 +54,95 @@ body .navbar-inverse .navbar-nav > .active > a:focus{
     margin: 15px 25px 25px 15px;
     right: 0;
 }
-
+.page-content .btn-primary{
+	border-radius: 20px;
+    margin-bottom: 15px !important;
+    font-size: 14px;
+    padding: 8px 16px;
+    margin-top: 10px;
+}
+.page-content .btn-primary:hover{
+	background-color: #fff;
+	color: #337ab7;
+	transition-duration: 300ms;
+	transition-property: background;
+}
+.page-content input[type="search"]{
+    box-shadow: none;
+    height: calc(1.5em + .75rem + 2px);
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+.page-content select{
+	padding: 3px 0 3px 5px;
+}
+#example_wrapper table{
+	margin-bottom: 10px;
+}
 .banner-top{
 	margin-bottom: 30px;
+}
+
+table .btn-warning{
+	border: none;
+    background: transparent;
+    color: #eea236;
+    font-size: 15px;
+}
+table .btn-danger{
+	border: none;
+    background: transparent;
+    color: #d43f3a;
+    font-size: 15px;
+}
+table .btn-info{
+	border: none;
+    background: transparent;
+    color: #5bc0de;
+    font-size: 15px;
+}
+.page-content table .td-action, .page-content table .td-status{
+	text-align: center;
+}
+.page-content .dataTables_wrapper .dataTables_paginate .paginate_button.current, 
+.page-content .dataTables_wrapper .dataTables_paginate .paginate_button.current:hover{
+	color: white !important;
+    font-weight: 600; 
+    background: black;
+    border-radius: 20px;
+}
+.page-content .dataTables_wrapper .dataTables_paginate .paginate_button:hover{
+	color: black !important;
+    background: white;
+    border: 1px solid #111;
+    border-radius: 20px;
+}
+
+.page-content.edit-profile{
+	border-radius: 12px;
+    background-color: #ecf0f1;
+    padding: 25px;
+}
+.page-content.edit-profile form{
+	text-align: center;
+	max-width: 1000px;
+}
+.page-content.edit-profile form label{
+	text-align: right;
+}
+.page-content.edit-profile form .col-sm-9{
+	max-width: 60%;
+}
+.page-content.edit-profile form button{
+	width: 35%;
 }
 nav .container-fluid{
 	padding: 0;
@@ -322,8 +408,11 @@ footer{
 	.banner-top, .page-content{
 		margin: auto;
 		display: block;
+		width: 90%
 	}	
-
+	#example_wrapper{
+		padding-top: 10px;
+	}
 	.container nav .navbar-header{
 		position: fixed;
 	    width: 100%;
@@ -426,5 +515,19 @@ footer{
 
 	.menu-on .navbar-header img {
 		visibility: hidden;
+	}
+	.page-content.edit-profile form label{
+		width: 100%;
+    	text-align: left;
+    	margin-left: 10px;
+	}
+	.page-content.edit-profile form .col-sm-9{
+		max-width: 100%;
+	}
+	.page-content.edit-profile form button{
+		width: 35%;
+	}
+	table .btn-info{
+		margin: 10px;
 	}
 }

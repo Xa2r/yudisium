@@ -1,7 +1,7 @@
-<div class="page-content active">
+<div class="page-content kategory">
       <?php $this->load->view('admin/template/flash-message'); ?>
       <a style="margin-bottom:5px" class="btn btn-primary btn-sm" href="#" data-toggle="modal" data-target="#tambahkategori">Tambahkan Data</a>
-    <div id="example_wrapper" class="dataTables_wrapper no-footer">
+    <div id="example_wrapper" class="dataTables_wrapper no-footer table-responsive">
         <!-- <div class="dataTables_length" id="example_length">
             <label>Show <select name="example_length" aria-controls="example" class="">
                 <option value="10">10</option>
@@ -13,7 +13,7 @@
         <!-- <div id="example_filter" class="dataTables_filter">
             <label>Search:<input type="search" class="" placeholder="" aria-controls="example"></label>
         </div> -->
-        <table class="table table-condensed table-hover dataTable no-footer" id="example" role="grid" aria-describedby="example_info">
+        <table class="table table-condensed table-hover dataTable no-footer table-striped" id="example" role="grid" aria-describedby="example_info">
       <thead>
         <tr class="alert alert-success" role="row">
             <th class="sorting_asc" tabindex="0" aria-controls="example" rowspan="1" colspan="1" aria-sort="ascending" aria-label="No: activate to sort column descending" style="width: 34px;">No</th>
@@ -44,8 +44,8 @@
             <td><?= $status; ?></td>
             <td><?= $status_upload; ?></td>
             <td><?= $format; ?></td>
-            <td style="width:110px"><a class="open-AddBookDialog btn btn-success btn-xs" data-id="1" data-id1="Semua Jurusan" data-id2="Surat Bebas Keuangan" data-id3="KEU" data-id4="A" data-id5="T" data-toggle="modal" href="#" data-target="#editkategori">Edit</a>
-              <a class="btn btn-danger btn-xs" href="index.php?view=kategoriyudisium&amp;deletea=1">Delete</a>
+            <td style="width:110px" class="td-action"><a class="open-AddBookDialog btn btn-warning btn-xs" data-id="1" data-id1="Semua Jurusan" data-id2="Surat Bebas Keuangan" data-id3="KEU" data-id4="A" data-id5="T" data-toggle="modal" href="#" data-target="#editkategori"><i class="fas fa-edit"></i></a>
+              <a class="btn btn-danger btn-xs" href="index.php?view=kategoriyudisium&amp;deletea=1"><i class="fas fa-trash-alt"></i></a>
             </td>
         </tr>
         <?php $no++;

@@ -52,8 +52,8 @@ function hajar() {
     <div id="example_filter" class="dataTables_filter">
         <label>Search:<input type="search" class="" placeholder="" aria-controls="example"></label>
     </div> -->
-    <div id="example_wrapper" class="dataTables_wrapper no-footer">
-        <table class="table table-condensed table-bordered dataTable no-footer" id="example" role="grid" aria-describedby="example_info">
+    <div id="example_wrapper" class="dataTables_wrapper no-footer table-responsive">
+        <table class="table table-condensed table-bordered dataTable no-footer table-striped" id="example" role="grid" aria-describedby="example_info">
           <thead>
             <tr class="alert alert-success" role="row"><th scope="row" class="sorting_asc" tabindex="0" aria-controls="example" rowspan="1" colspan="1" aria-label="No: activate to sort column descending" style="width: 39px;" aria-sort="ascending">No</th><th class="sorting" tabindex="0" aria-controls="example" rowspan="1" colspan="1" aria-label="NIM: activate to sort column ascending" style="width: 77px;">NIM</th><th class="sorting" tabindex="0" aria-controls="example" rowspan="1" colspan="1" aria-label="Nama: activate to sort column ascending" style="width: 284px;">Nama</th><th class="sorting" tabindex="0" aria-controls="example" rowspan="1" colspan="1" aria-label="Tanggal Aktif: activate to sort column ascending" style="width: 158px;">Tanggal Aktif</th><th class="sorting" tabindex="0" aria-controls="example" rowspan="1" colspan="1" aria-label="Tanggal Selesai: activate to sort column ascending" style="width: 158px;">Tanggal Selesai</th><th class="sorting" tabindex="0" aria-controls="example" rowspan="1" colspan="1" aria-label="Status: activate to sort column ascending" style="width: 82px;">Status</th><th class="sorting" tabindex="0" aria-controls="example" rowspan="1" colspan="1" aria-label="Action: activate to sort column ascending" style="width: 74px;">Action</th></tr>
           </thead>
@@ -75,10 +75,11 @@ function hajar() {
                 <td><?= $tgl_aktif; ?></td>
                               <td><?= $tgl_selesai; ?></td>
                               <td><?= $status; ?></td>
-                <td>
-                    <a title="Lihat Persyaratan" href="index.php?view=list_yudisium_admin&amp;id=&amp;nim=14030066" class="btn btn-info btn-xs"><i class="glyphicon glyphicon-search"></i></a>
+                <td class="td-action">
+                    <a title="Lihat Persyaratan" href="index.php?view=list_yudisium_admin&amp;id=&amp;nim=14030066" class="btn btn-info btn-xs"><i class="fas fa-search-plus"></i></a>
                                   
-                    <a title="Hapus" href="index.php?view=list_seleksi&amp;deletea=14030066" class="btn btn-danger btn-xs"><i class="glyphicon glyphicon-trash"></i></a>
+                    <a title="Hapus" href="index.php?view=list_seleksi&amp;deletea=14030066" class="btn btn-danger btn-xs">
+                    <i class="fas fa-trash-alt"></i></a>
                 </td>  
               </tr>
               <?php

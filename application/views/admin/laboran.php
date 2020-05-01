@@ -54,171 +54,171 @@ function hajar() {
                         	  <td>1</td>                           
 							  <td>14030066</td>							 
 							  <td>2019-01-13</td>
-                              <td><span class="text-success"><i class="glyphicon glyphicon-ok"></i></span></td>
-							  <td>
-							  	  <a title="Lihat Persyaratan" href="index.php?view=laboran&amp;nim=14030066" class="btn btn-info btn-xs"><i class="glyphicon glyphicon-search"></i></a>
-                                  <a title="Ubah Status ke-aktif-an" href="index.php?view=laboran&amp;update=14030066&amp;status=" class="btn btn-warning btn-xs"><i class="glyphicon glyphicon-edit"></i></a>
-							  	  <a title="Hapus" href="index.php?view=laboran&amp;deletea=14030066" class="btn btn-danger btn-xs"><i class="glyphicon glyphicon-trash"></i></a>
+                              <td class="td-status"><span class="text-success"><i class="glyphicon glyphicon-ok"></i></span></td>
+							  <td class="td-action">
+							  	  <a title="Lihat Persyaratan" href="index.php?view=laboran&amp;nim=14030066" class="btn btn-info btn-xs"><i class="fas fa-search-plus"></i></a>
+                                  <a title="Ubah Status ke-aktif-an" href="index.php?view=laboran&amp;update=14030066&amp;status=" class="btn btn-warning btn-xs"><i class="fas fa-edit"></i></a>
+							  	  <a title="Hapus" href="index.php?view=laboran&amp;deletea=14030066" class="btn btn-danger btn-xs"><i class="fas fa-trash-alt"></i></a>
 							  </td>  
 						  </tr><tr>
                         	  <td>2</td>                           
 							  <td>14030001</td>							 
 							  <td></td>
-                              <td><span class="text-success"><i class="glyphicon glyphicon-ok"></i></span></td>
-							  <td>
-							  	  <a title="Lihat Persyaratan" href="index.php?view=laboran&amp;nim=14030001" class="btn btn-info btn-xs"><i class="glyphicon glyphicon-search"></i></a>
-                                  <a title="Ubah Status ke-aktif-an" href="index.php?view=laboran&amp;update=14030001&amp;status=" class="btn btn-warning btn-xs"><i class="glyphicon glyphicon-edit"></i></a>
-							  	  <a title="Hapus" href="index.php?view=laboran&amp;deletea=14030001" class="btn btn-danger btn-xs"><i class="glyphicon glyphicon-trash"></i></a>
+                              <td class="td-status"><span class="text-success"><i class="glyphicon glyphicon-ok"></i></span></td>
+							  <td class="td-action">
+							  	  <a title="Lihat Persyaratan" href="index.php?view=laboran&amp;nim=14030001" class="btn btn-info btn-xs"><i class="fas fa-search-plus"></i></a>
+                                  <a title="Ubah Status ke-aktif-an" href="index.php?view=laboran&amp;update=14030001&amp;status=" class="btn btn-warning btn-xs"><i class="fas fa-edit"></i></a>
+							  	  <a title="Hapus" href="index.php?view=laboran&amp;deletea=14030001" class="btn btn-danger btn-xs"><i class="fas fa-trash-alt"></i></a>
 							  </td>  
 						  </tr><tr>
                         	  <td>3</td>                           
 							  <td>14030086</td>							 
 							  <td></td>
-                              <td><span class="text-success"><i class="glyphicon glyphicon-ok"></i></span></td>
-							  <td>
-							  	  <a title="Lihat Persyaratan" href="index.php?view=laboran&amp;nim=14030086" class="btn btn-info btn-xs"><i class="glyphicon glyphicon-search"></i></a>
-                                  <a title="Ubah Status ke-aktif-an" href="index.php?view=laboran&amp;update=14030086&amp;status=" class="btn btn-warning btn-xs"><i class="glyphicon glyphicon-edit"></i></a>
-							  	  <a title="Hapus" href="index.php?view=laboran&amp;deletea=14030086" class="btn btn-danger btn-xs"><i class="glyphicon glyphicon-trash"></i></a>
+                              <td class="td-status"><span class="text-success"><i class="glyphicon glyphicon-ok"></i></span></td>
+							  <td class="td-action">
+							  	  <a title="Lihat Persyaratan" href="index.php?view=laboran&amp;nim=14030086" class="btn btn-info btn-xs"><i class="fas fa-search-plus"></i></a>
+                                  <a title="Ubah Status ke-aktif-an" href="index.php?view=laboran&amp;update=14030086&amp;status=" class="btn btn-warning btn-xs"><i class="fas fa-edit"></i></a>
+							  	  <a title="Hapus" href="index.php?view=laboran&amp;deletea=14030086" class="btn btn-danger btn-xs"><i class="fas fa-trash-alt"></i></a>
 							  </td>  
 						  </tr><tr>
                         	  <td>4</td>                           
 							  <td>12030005</td>							 
 							  <td></td>
-                              <td><span class="text-success"><i class="glyphicon glyphicon-ok"></i></span></td>
-							  <td>
-							  	  <a title="Lihat Persyaratan" href="index.php?view=laboran&amp;nim=12030005" class="btn btn-info btn-xs"><i class="glyphicon glyphicon-search"></i></a>
-                                  <a title="Ubah Status ke-aktif-an" href="index.php?view=laboran&amp;update=12030005&amp;status=" class="btn btn-warning btn-xs"><i class="glyphicon glyphicon-edit"></i></a>
-							  	  <a title="Hapus" href="index.php?view=laboran&amp;deletea=12030005" class="btn btn-danger btn-xs"><i class="glyphicon glyphicon-trash"></i></a>
+                              <td class="td-status"><span class="text-success"><i class="glyphicon glyphicon-ok"></i></span></td>
+							  <td class="td-action">
+							  	  <a title="Lihat Persyaratan" href="index.php?view=laboran&amp;nim=12030005" class="btn btn-info btn-xs"><i class="fas fa-search-plus"></i></a>
+                                  <a title="Ubah Status ke-aktif-an" href="index.php?view=laboran&amp;update=12030005&amp;status=" class="btn btn-warning btn-xs"><i class="fas fa-edit"></i></a>
+							  	  <a title="Hapus" href="index.php?view=laboran&amp;deletea=12030005" class="btn btn-danger btn-xs"><i class="fas fa-trash-alt"></i></a>
 							  </td>  
 						  </tr><tr>
                         	  <td>5</td>                           
 							  <td>15030066</td>							 
 							  <td></td>
-                              <td><span class="text-success"><i class="glyphicon glyphicon-ok"></i></span></td>
-							  <td>
-							  	  <a title="Lihat Persyaratan" href="index.php?view=laboran&amp;nim=15030066" class="btn btn-info btn-xs"><i class="glyphicon glyphicon-search"></i></a>
-                                  <a title="Ubah Status ke-aktif-an" href="index.php?view=laboran&amp;update=15030066&amp;status=" class="btn btn-warning btn-xs"><i class="glyphicon glyphicon-edit"></i></a>
-							  	  <a title="Hapus" href="index.php?view=laboran&amp;deletea=15030066" class="btn btn-danger btn-xs"><i class="glyphicon glyphicon-trash"></i></a>
+                              <td class="td-status"><span class="text-success"><i class="glyphicon glyphicon-ok"></i></span></td>
+							  <td class="td-action">
+							  	  <a title="Lihat Persyaratan" href="index.php?view=laboran&amp;nim=15030066" class="btn btn-info btn-xs"><i class="fas fa-search-plus"></i></a>
+                                  <a title="Ubah Status ke-aktif-an" href="index.php?view=laboran&amp;update=15030066&amp;status=" class="btn btn-warning btn-xs"><i class="fas fa-edit"></i></a>
+							  	  <a title="Hapus" href="index.php?view=laboran&amp;deletea=15030066" class="btn btn-danger btn-xs"><i class="fas fa-trash-alt"></i></a>
 							  </td>  
 						  </tr><tr>
                         	  <td>6</td>                           
 							  <td>15060024</td>							 
 							  <td></td>
-                              <td><span class="text-success"><i class="glyphicon glyphicon-ok"></i></span></td>
-							  <td>
-							  	  <a title="Lihat Persyaratan" href="index.php?view=laboran&amp;nim=15060024" class="btn btn-info btn-xs"><i class="glyphicon glyphicon-search"></i></a>
-                                  <a title="Ubah Status ke-aktif-an" href="index.php?view=laboran&amp;update=15060024&amp;status=" class="btn btn-warning btn-xs"><i class="glyphicon glyphicon-edit"></i></a>
-							  	  <a title="Hapus" href="index.php?view=laboran&amp;deletea=15060024" class="btn btn-danger btn-xs"><i class="glyphicon glyphicon-trash"></i></a>
+                              <td class="td-status"><span class="text-success"><i class="glyphicon glyphicon-ok"></i></span></td>
+							  <td class="td-action">
+							  	  <a title="Lihat Persyaratan" href="index.php?view=laboran&amp;nim=15060024" class="btn btn-info btn-xs"><i class="fas fa-search-plus"></i></a>
+                                  <a title="Ubah Status ke-aktif-an" href="index.php?view=laboran&amp;update=15060024&amp;status=" class="btn btn-warning btn-xs"><i class="fas fa-edit"></i></a>
+							  	  <a title="Hapus" href="index.php?view=laboran&amp;deletea=15060024" class="btn btn-danger btn-xs"><i class="fas fa-trash-alt"></i></a>
 							  </td>  
 						  </tr><tr>
                         	  <td>7</td>                           
 							  <td>14030065</td>							 
 							  <td></td>
-                              <td><span class="text-success"><i class="glyphicon glyphicon-ok"></i></span></td>
-							  <td>
-							  	  <a title="Lihat Persyaratan" href="index.php?view=laboran&amp;nim=14030065" class="btn btn-info btn-xs"><i class="glyphicon glyphicon-search"></i></a>
-                                  <a title="Ubah Status ke-aktif-an" href="index.php?view=laboran&amp;update=14030065&amp;status=" class="btn btn-warning btn-xs"><i class="glyphicon glyphicon-edit"></i></a>
-							  	  <a title="Hapus" href="index.php?view=laboran&amp;deletea=14030065" class="btn btn-danger btn-xs"><i class="glyphicon glyphicon-trash"></i></a>
+                              <td class="td-status"><span class="text-success"><i class="glyphicon glyphicon-ok"></i></span></td>
+							  <td class="td-action">
+							  	  <a title="Lihat Persyaratan" href="index.php?view=laboran&amp;nim=14030065" class="btn btn-info btn-xs"><i class="fas fa-search-plus"></i></a>
+                                  <a title="Ubah Status ke-aktif-an" href="index.php?view=laboran&amp;update=14030065&amp;status=" class="btn btn-warning btn-xs"><i class="fas fa-edit"></i></a>
+							  	  <a title="Hapus" href="index.php?view=laboran&amp;deletea=14030065" class="btn btn-danger btn-xs"><i class="fas fa-trash-alt"></i></a>
 							  </td>  
 						  </tr><tr>
                         	  <td>8</td>                           
 							  <td>14030017</td>							 
 							  <td>2019-01-02</td>
-                              <td><span class="text-success"><i class="glyphicon glyphicon-ok"></i></span></td>
-							  <td>
-							  	  <a title="Lihat Persyaratan" href="index.php?view=laboran&amp;nim=14030017" class="btn btn-info btn-xs"><i class="glyphicon glyphicon-search"></i></a>
-                                  <a title="Ubah Status ke-aktif-an" href="index.php?view=laboran&amp;update=14030017&amp;status=" class="btn btn-warning btn-xs"><i class="glyphicon glyphicon-edit"></i></a>
-							  	  <a title="Hapus" href="index.php?view=laboran&amp;deletea=14030017" class="btn btn-danger btn-xs"><i class="glyphicon glyphicon-trash"></i></a>
+                              <td class="td-status"><span class="text-success"><i class="glyphicon glyphicon-ok"></i></span></td>
+							  <td class="td-action">
+							  	  <a title="Lihat Persyaratan" href="index.php?view=laboran&amp;nim=14030017" class="btn btn-info btn-xs"><i class="fas fa-search-plus"></i></a>
+                                  <a title="Ubah Status ke-aktif-an" href="index.php?view=laboran&amp;update=14030017&amp;status=" class="btn btn-warning btn-xs"><i class="fas fa-edit"></i></a>
+							  	  <a title="Hapus" href="index.php?view=laboran&amp;deletea=14030017" class="btn btn-danger btn-xs"><i class="fas fa-trash-alt"></i></a>
 							  </td>  
 						  </tr><tr>
                         	  <td>9</td>                           
 							  <td>14030007</td>							 
 							  <td></td>
-                              <td><span class="text-success"><i class="glyphicon glyphicon-ok"></i></span></td>
-							  <td>
-							  	  <a title="Lihat Persyaratan" href="index.php?view=laboran&amp;nim=14030007" class="btn btn-info btn-xs"><i class="glyphicon glyphicon-search"></i></a>
-                                  <a title="Ubah Status ke-aktif-an" href="index.php?view=laboran&amp;update=14030007&amp;status=" class="btn btn-warning btn-xs"><i class="glyphicon glyphicon-edit"></i></a>
-							  	  <a title="Hapus" href="index.php?view=laboran&amp;deletea=14030007" class="btn btn-danger btn-xs"><i class="glyphicon glyphicon-trash"></i></a>
+                              <td class="td-status"><span class="text-success"><i class="glyphicon glyphicon-ok"></i></span></td>
+							  <td class="td-action">
+							  	  <a title="Lihat Persyaratan" href="index.php?view=laboran&amp;nim=14030007" class="btn btn-info btn-xs"><i class="fas fa-search-plus"></i></a>
+                                  <a title="Ubah Status ke-aktif-an" href="index.php?view=laboran&amp;update=14030007&amp;status=" class="btn btn-warning btn-xs"><i class="fas fa-edit"></i></a>
+							  	  <a title="Hapus" href="index.php?view=laboran&amp;deletea=14030007" class="btn btn-danger btn-xs"><i class="fas fa-trash-alt"></i></a>
 							  </td>  
 						  </tr><tr>
                         	  <td>10</td>                           
 							  <td>17030023</td>							 
 							  <td>2019-01-31</td>
-                              <td><span class="text-success"><i class="glyphicon glyphicon-ok"></i></span></td>
-							  <td>
-							  	  <a title="Lihat Persyaratan" href="index.php?view=laboran&amp;nim=17030023" class="btn btn-info btn-xs"><i class="glyphicon glyphicon-search"></i></a>
-                                  <a title="Ubah Status ke-aktif-an" href="index.php?view=laboran&amp;update=17030023&amp;status=" class="btn btn-warning btn-xs"><i class="glyphicon glyphicon-edit"></i></a>
-							  	  <a title="Hapus" href="index.php?view=laboran&amp;deletea=17030023" class="btn btn-danger btn-xs"><i class="glyphicon glyphicon-trash"></i></a>
+                              <td class="td-status"><span class="text-success"><i class="glyphicon glyphicon-ok"></i></span></td>
+							  <td class="td-action">
+							  	  <a title="Lihat Persyaratan" href="index.php?view=laboran&amp;nim=17030023" class="btn btn-info btn-xs"><i class="fas fa-search-plus"></i></a>
+                                  <a title="Ubah Status ke-aktif-an" href="index.php?view=laboran&amp;update=17030023&amp;status=" class="btn btn-warning btn-xs"><i class="fas fa-edit"></i></a>
+							  	  <a title="Hapus" href="index.php?view=laboran&amp;deletea=17030023" class="btn btn-danger btn-xs"><i class="fas fa-trash-alt"></i></a>
 							  </td>  
 						  </tr><tr>
                         	  <td>11</td>                           
 							  <td>17030006</td>							 
 							  <td></td>
-                              <td><span class="text-success"><i class="glyphicon glyphicon-ok"></i></span></td>
-							  <td>
-							  	  <a title="Lihat Persyaratan" href="index.php?view=laboran&amp;nim=17030006" class="btn btn-info btn-xs"><i class="glyphicon glyphicon-search"></i></a>
-                                  <a title="Ubah Status ke-aktif-an" href="index.php?view=laboran&amp;update=17030006&amp;status=" class="btn btn-warning btn-xs"><i class="glyphicon glyphicon-edit"></i></a>
-							  	  <a title="Hapus" href="index.php?view=laboran&amp;deletea=17030006" class="btn btn-danger btn-xs"><i class="glyphicon glyphicon-trash"></i></a>
+                              <td class="td-status"><span class="text-success"><i class="glyphicon glyphicon-ok"></i></span></td>
+							  <td class="td-action">
+							  	  <a title="Lihat Persyaratan" href="index.php?view=laboran&amp;nim=17030006" class="btn btn-info btn-xs"><i class="fas fa-search-plus"></i></a>
+                                  <a title="Ubah Status ke-aktif-an" href="index.php?view=laboran&amp;update=17030006&amp;status=" class="btn btn-warning btn-xs"><i class="fas fa-edit"></i></a>
+							  	  <a title="Hapus" href="index.php?view=laboran&amp;deletea=17030006" class="btn btn-danger btn-xs"><i class="fas fa-trash-alt"></i></a>
 							  </td>  
 						  </tr><tr>
                         	  <td>12</td>                           
 							  <td>10030034</td>							 
 							  <td></td>
-                              <td><span class="text-success"><i class="glyphicon glyphicon-ok"></i></span></td>
-							  <td>
-							  	  <a title="Lihat Persyaratan" href="index.php?view=laboran&amp;nim=10030034" class="btn btn-info btn-xs"><i class="glyphicon glyphicon-search"></i></a>
-                                  <a title="Ubah Status ke-aktif-an" href="index.php?view=laboran&amp;update=10030034&amp;status=" class="btn btn-warning btn-xs"><i class="glyphicon glyphicon-edit"></i></a>
-							  	  <a title="Hapus" href="index.php?view=laboran&amp;deletea=10030034" class="btn btn-danger btn-xs"><i class="glyphicon glyphicon-trash"></i></a>
+                              <td class="td-status"><span class="text-success"><i class="glyphicon glyphicon-ok"></i></span></td>
+							  <td class="td-action">
+							  	  <a title="Lihat Persyaratan" href="index.php?view=laboran&amp;nim=10030034" class="btn btn-info btn-xs"><i class="fas fa-search-plus"></i></a>
+                                  <a title="Ubah Status ke-aktif-an" href="index.php?view=laboran&amp;update=10030034&amp;status=" class="btn btn-warning btn-xs"><i class="fas fa-edit"></i></a>
+							  	  <a title="Hapus" href="index.php?view=laboran&amp;deletea=10030034" class="btn btn-danger btn-xs"><i class="fas fa-trash-alt"></i></a>
 							  </td>  
 						  </tr><tr>
                         	  <td>13</td>                           
 							  <td>14030006</td>							 
 							  <td>2019-01-29</td>
-                              <td><span class="text-success"><i class="glyphicon glyphicon-ok"></i></span></td>
-							  <td>
-							  	  <a title="Lihat Persyaratan" href="index.php?view=laboran&amp;nim=14030006" class="btn btn-info btn-xs"><i class="glyphicon glyphicon-search"></i></a>
-                                  <a title="Ubah Status ke-aktif-an" href="index.php?view=laboran&amp;update=14030006&amp;status=" class="btn btn-warning btn-xs"><i class="glyphicon glyphicon-edit"></i></a>
-							  	  <a title="Hapus" href="index.php?view=laboran&amp;deletea=14030006" class="btn btn-danger btn-xs"><i class="glyphicon glyphicon-trash"></i></a>
+                              <td class="td-status"><span class="text-success"><i class="glyphicon glyphicon-ok"></i></span></td>
+							  <td class="td-action">
+							  	  <a title="Lihat Persyaratan" href="index.php?view=laboran&amp;nim=14030006" class="btn btn-info btn-xs"><i class="fas fa-search-plus"></i></a>
+                                  <a title="Ubah Status ke-aktif-an" href="index.php?view=laboran&amp;update=14030006&amp;status=" class="btn btn-warning btn-xs"><i class="fas fa-edit"></i></a>
+							  	  <a title="Hapus" href="index.php?view=laboran&amp;deletea=14030006" class="btn btn-danger btn-xs"><i class="fas fa-trash-alt"></i></a>
 							  </td>  
 						  </tr><tr>
                         	  <td>14</td>                           
 							  <td>08030005</td>							 
 							  <td>2019-10-21</td>
-                              <td><span class="text-success"><i class="glyphicon glyphicon-ok"></i></span></td>
-							  <td>
-							  	  <a title="Lihat Persyaratan" href="index.php?view=laboran&amp;nim=08030005" class="btn btn-info btn-xs"><i class="glyphicon glyphicon-search"></i></a>
-                                  <a title="Ubah Status ke-aktif-an" href="index.php?view=laboran&amp;update=08030005&amp;status=" class="btn btn-warning btn-xs"><i class="glyphicon glyphicon-edit"></i></a>
-							  	  <a title="Hapus" href="index.php?view=laboran&amp;deletea=08030005" class="btn btn-danger btn-xs"><i class="glyphicon glyphicon-trash"></i></a>
+                              <td class="td-status"><span class="text-success"><i class="glyphicon glyphicon-ok"></i></span></td>
+							  <td class="td-action">
+							  	  <a title="Lihat Persyaratan" href="index.php?view=laboran&amp;nim=08030005" class="btn btn-info btn-xs"><i class="fas fa-search-plus"></i></a>
+                                  <a title="Ubah Status ke-aktif-an" href="index.php?view=laboran&amp;update=08030005&amp;status=" class="btn btn-warning btn-xs"><i class="fas fa-edit"></i></a>
+							  	  <a title="Hapus" href="index.php?view=laboran&amp;deletea=08030005" class="btn btn-danger btn-xs"><i class="fas fa-trash-alt"></i></a>
 							  </td>  
 						  </tr><tr>
                         	  <td>15</td>                           
 							  <td>15050006</td>							 
 							  <td></td>
-                              <td><span class="text-success"><i class="glyphicon glyphicon-ok"></i></span></td>
-							  <td>
-							  	  <a title="Lihat Persyaratan" href="index.php?view=laboran&amp;nim=15050006" class="btn btn-info btn-xs"><i class="glyphicon glyphicon-search"></i></a>
-                                  <a title="Ubah Status ke-aktif-an" href="index.php?view=laboran&amp;update=15050006&amp;status=" class="btn btn-warning btn-xs"><i class="glyphicon glyphicon-edit"></i></a>
-							  	  <a title="Hapus" href="index.php?view=laboran&amp;deletea=15050006" class="btn btn-danger btn-xs"><i class="glyphicon glyphicon-trash"></i></a>
+                              <td class="td-status"><span class="text-success"><i class="glyphicon glyphicon-ok"></i></span></td>
+							  <td class="td-action">
+							  	  <a title="Lihat Persyaratan" href="index.php?view=laboran&amp;nim=15050006" class="btn btn-info btn-xs"><i class="fas fa-search-plus"></i></a>
+                                  <a title="Ubah Status ke-aktif-an" href="index.php?view=laboran&amp;update=15050006&amp;status=" class="btn btn-warning btn-xs"><i class="fas fa-edit"></i></a>
+							  	  <a title="Hapus" href="index.php?view=laboran&amp;deletea=15050006" class="btn btn-danger btn-xs"><i class="fas fa-trash-alt"></i></a>
 							  </td>  
 						  </tr><tr>
                         	  <td>16</td>                           
 							  <td>15040005</td>							 
 							  <td></td>
-                              <td><span class="text-success"><i class="glyphicon glyphicon-ok"></i></span></td>
-							  <td>
-							  	  <a title="Lihat Persyaratan" href="index.php?view=laboran&amp;nim=15040005" class="btn btn-info btn-xs"><i class="glyphicon glyphicon-search"></i></a>
-                                  <a title="Ubah Status ke-aktif-an" href="index.php?view=laboran&amp;update=15040005&amp;status=" class="btn btn-warning btn-xs"><i class="glyphicon glyphicon-edit"></i></a>
-							  	  <a title="Hapus" href="index.php?view=laboran&amp;deletea=15040005" class="btn btn-danger btn-xs"><i class="glyphicon glyphicon-trash"></i></a>
+                              <td class="td-status"><span class="text-success"><i class="glyphicon glyphicon-ok"></i></span></td>
+							  <td class="td-action">
+							  	  <a title="Lihat Persyaratan" href="index.php?view=laboran&amp;nim=15040005" class="btn btn-info btn-xs"><i class="fas fa-search-plus"></i></a>
+                                  <a title="Ubah Status ke-aktif-an" href="index.php?view=laboran&amp;update=15040005&amp;status=" class="btn btn-warning btn-xs"><i class="fas fa-edit"></i></a>
+							  	  <a title="Hapus" href="index.php?view=laboran&amp;deletea=15040005" class="btn btn-danger btn-xs"><i class="fas fa-trash-alt"></i></a>
 							  </td>  
 						  </tr><tr>
                         	  <td>17</td>                           
 							  <td>14030020</td>							 
 							  <td></td>
-                              <td><span class="text-success"><i class="glyphicon glyphicon-ok"></i></span></td>
-							  <td>
-							  	  <a title="Lihat Persyaratan" href="index.php?view=laboran&amp;nim=14030020" class="btn btn-info btn-xs"><i class="glyphicon glyphicon-search"></i></a>
-                                  <a title="Ubah Status ke-aktif-an" href="index.php?view=laboran&amp;update=14030020&amp;status=" class="btn btn-warning btn-xs"><i class="glyphicon glyphicon-edit"></i></a>
-							  	  <a title="Hapus" href="index.php?view=laboran&amp;deletea=14030020" class="btn btn-danger btn-xs"><i class="glyphicon glyphicon-trash"></i></a>
+                              <td class="td-status"><span class="text-success"><i class="glyphicon glyphicon-ok"></i></span></td>
+							  <td class="td-action">
+							  	  <a title="Lihat Persyaratan" href="index.php?view=laboran&amp;nim=14030020" class="btn btn-info btn-xs"><i class="fas fa-search-plus"></i></a>
+                                  <a title="Ubah Status ke-aktif-an" href="index.php?view=laboran&amp;update=14030020&amp;status=" class="btn btn-warning btn-xs"><i class="fas fa-edit"></i></a>
+							  	  <a title="Hapus" href="index.php?view=laboran&amp;deletea=14030020" class="btn btn-danger btn-xs"><i class="fas fa-trash-alt"></i></a>
 							  </td>  
 						  </tr>			  </tbody>
 		</table>
