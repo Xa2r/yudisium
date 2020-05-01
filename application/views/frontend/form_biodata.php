@@ -175,8 +175,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			<div class="form-group">
 				<label class="col-sm-2 control-label">Status</label>
 				<div class="col-lg-9">
-					<input type="radio" name="status" id="optionsRadios2" value="BK" class="radio-inline" <?= ($status == 'BK')?'checked':'' ?>>Belum Menikah
-					<input type="radio" name="status" id="optionsRadios2" value="K" class="radio-inline" <?= ($status == 'K')?'checked':'' ?>>Menikah
+					<input type="radio" name="status" value="K" class="radio-inline" <?= ($status == 'K')?'checked':'' ?>>Menikah
+					<input type="radio" name="status" value="B" class="radio-inline" <?= ($status == 'B')?'checked':'' ?>>Belum Menikah
 				</div>
 			</div>
 			
