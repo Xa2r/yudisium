@@ -1,21 +1,5 @@
-      <div class="page-main home">
-        <div class="post text">
-          <div class="row">
-          <div class="col-md-12">
-            <article> 
-            
-              <h1 class="title">SELAMAT DATANG DI SYSTEM YUDISIUM ONLINE</h1>
-            <div class="image-rule"><img src="<?= base_url('assets/images/alur.png') ?>" style="width: 100%;"></div><br><hr><br>
-            </article>
-          </div>
-        </div>    
-        </div>
-        </div>
-      </div>
-  </div>
 
-  <!-- footer -->
-  <footer style="background:#f4f4f4; border-top:5px solid #e3e3e3; padding:25px">
+<footer style="background:#f4f4f4; border-top:5px solid #e3e3e3; padding:25px">
           <div class="container">
               <div class="row">
                       <p class="footer" style="text-align:center">
@@ -24,6 +8,9 @@
               </div>
           </div>
   </footer>
+
+
+
   <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->

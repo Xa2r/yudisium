@@ -18,14 +18,21 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <link rel="stylesheet" type="text/css" href="<?= base_url('assets/css/datatables.min.css') ?>">
     <link rel="stylesheet" type="text/css" href="<?= base_url('assets/css/jquery.dataTables.min.css') ?>">
 
+    <!-- Google font -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400&family=Roboto&display=swap" rel="stylesheet">
+
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="<?= base_url(); ?>assets/fonts/fontawesome/css/all.css">
+    <link rel="stylesheet" href="<?= base_url(); ?>assets/fonts/fontawesome/css/all.min.css">
+
     <script type="text/javascript" src="<?= base_url('assets/js/datatables.min.js') ?>"></script>
+
 
     </head>
 
     <body data-gr-c-s-loaded="true">
-  <div class="container">
-    <img style="width:100%; margin-top:20px" src="<?= base_url('assets/images/header.png') ?>">
-              <nav class="navbar navbar-inverse">      
+  <div class="container-fluid">
+      <nav class="navbar home">      
         <div class="container-fluid">
           <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -37,11 +44,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
           </div>
 
           <div id="navbar" class="navbar-collapse collapse">
-                          <ul class="nav navbar-nav">
-                <li><a href="<?= base_url('index') ?>"><i class="glyphicon glyphicon-home"></i> Home Page</a></li>
-
-
-                <li><a href="<?= base_url('form_login') ?>"><i class="glyphicon glyphicon-off"></i> Login</a></li>
+              <ul class="nav navbar-nav">
+                <li>
+                  <a class="header-logo" href="<?= base_url('index') ?>">
+                    <img style="max-width: 80px;" src="<?= base_url('assets/images/logo.png'); ?>">
+                  </a>
+                </li>
               </ul>
 
 
@@ -58,33 +66,77 @@ defined('BASEPATH') OR exit('No direct script access allowed');
               </div><!--/.nav-collapse -->
         </div><!--/.container-fluid -->
       </nav>
+      <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+          <h1 class="display-4">E-Yudisium</h1>
+          <h4 class="display-3">Sekolah Tinggi Teknologi Adisutjipto</h4>
+          <div class="btn-popup">
+            <a href="" class="btn btn-success btn-rounded mb-4" data-toggle="modal" data-target="#modalLoginForm">Silahkan Login Menggunakan<br>Akun Portal Mahasiswa Anda.</a>
+          </div>
+        </div>
+      </div>
 
+      <div class="page-main home">
+        <div class="post text">
+          <div class="row">
+          <div class="col-md-12">
+            <article> 
+            
+              <h1 class="title">SELAMAT DATANG DI SYSTEM YUDISIUM ONLINE</h1>
+            <div class="image-rule"><img src="<?= base_url('assets/images/alur.png') ?>" style="width: 100%;"></div><br><hr><br>
+            </article>
+          </div>
+        </div>    
+        </div>
+        </div>
+      </div>
 
+    <!-- Popup login  -->
 
-      <div class="post text">
-      <div class="row">
-  <div class="col-md-12">
-    <article> 
-    
-      <h1 class="title">SELAMAT DATANG DI SYSTEM YUDISIUM ONLINE</h1>
-      <p class="paragraph" style="text-align:center">
-      <a class="pull-center btn btn-success btn-md" href="<?= base_url('form_login') ?>">Silahkan LOGIN menggunakan akun Portal Mahasiswa anda.</a>
-    </p>
-    <br><br>
-    <center><img src="<?= base_url('assets/images/alur.png') ?>" width="1024"></center><br><hr><br>
-          <nav>
-            <ul class="pagination">
-                          </ul>
-          </nav>
-    </article>
-  </div>
-</div>    
+    <div class="modal fade login" id="modalLoginForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+      aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header text-center">
+            <h4 class="modal-title w-100 font-weight-bold">Sign in</h4>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body mx-3">
+          <?php $this->load->view('admin/template/flash-message'); ?>
+            <form action="<?= base_url('login') ?>" method="POST" class="form-horizontal" role="form">
+                
+                <div class="form-group">
+                  <label for="id_user" class="col-sm-3 control-label"><i class="fas fa-user-alt"></i></label>
+                  <div class="input-group col-lg-9">
+                      <div class="col-xs-8"><input type="text" class="form-control" id="id_user" name="id_user" placeholder="Masukkan NIM" required=""></div>
+                  </div>
+                </div>            
+
+                <div class="form-group">
+                  <label for="password" class="col-sm-3 control-label"><i class="fas fa-lock"></i></label>
+                  <div class="input-group col-lg-9">
+                      <div class="col-xs-8">
+                          <input type="password" class="form-control" id="password" name="password" placeholder="Masukkan Password" required="">
+                      </div>
+                  </div>
+                </div>
+                
+                <div class="form-group tombol">
+                  <div class="col-sm-offset col-sm-9">
+                    <button type="submit" name="login" class="btn btn-success">Login</button><br><br>
+                  </div>
+                </div>
+              </form>
+
+        </div>
+      </div>
     </div>
-</div> <!-- /container -->
+  </div>
 
-
-
-<footer style="background:#f4f4f4; border-top:5px solid #e3e3e3; padding:25px">
+  <!-- footer -->
+  <footer style="background:#f4f4f4; border-top:5px solid #e3e3e3; padding:25px">
           <div class="container">
               <div class="row">
                       <p class="footer" style="text-align:center">
@@ -93,9 +145,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
               </div>
           </div>
   </footer>
-
-
-
   <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
