@@ -16,9 +16,8 @@ class Select extends CI_Model
                 ->result_array();
     }
 
-    public function getMahasiswaById()
+    public function getMahasiswaById($nim)
     {
-        $nim = $this->input->get('nim');
         return $this->db->from('sia.master_prodi')
                 ->join('sia.d_mahasiswa', 'sia.master_prodi.kd_prodi=sia.d_mahasiswa.kd_prodi')
                 ->where('sia.d_mahasiswa.nim', $nim)

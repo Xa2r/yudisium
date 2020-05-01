@@ -92,7 +92,8 @@ class Index extends CI_Controller {
 
     public function getMahasiswaById()
     {
-        $data['mahasiswa'] = $this->Select->getMahasiswaById();
+        $nim = $this->input->get('nim');
+        $data['mahasiswa'] = $this->Select->getMahasiswaById($nim);
         $this->load->view('admin/template/data_mahasiswa', $data);
     }
 }
