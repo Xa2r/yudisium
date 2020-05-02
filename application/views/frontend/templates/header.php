@@ -38,7 +38,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             </button>
           </div>
 
-          <div id="navbar" class="navbar-collapse collapse">
+          <div id="navbar-custome" class="navbar-collapse collapse">
               <ul class="nav navbar-nav">
                 <li>
                   <a class="header-logo" href="<?= base_url('index') ?>">
@@ -60,9 +60,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
           </div><!--/.nav-collapse -->
         </div><!--/.container-fluid -->
       </nav>
+      <?php foreach ($user as $data):
+        $nim = $data['nim'];
+        $nama = $data['nama'];
+      ?>
       <div class="jumbotron jumbotron-fluid">
         <div class="container">
-          <h1 class="display-4">E-Yudisium</h1>
-          <h4 class="display-3">Sekolah Tinggi Teknologi Adisutjipto</h4>
+          <h1 class="display-4">Selamat Datang,</h1>
+          <h4 class="display-3"><?= $nama; ?></h4>
         </div>
       </div>
+      <?php endforeach; ?>

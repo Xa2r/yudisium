@@ -1,9 +1,9 @@
 
-<footer style="background:#f4f4f4; border-top:5px solid #e3e3e3; padding:25px">
+<footer>
           <div class="container">
               <div class="row">
                       <p class="footer" style="text-align:center">
-                        Copyright © 2016 E-Yudisium System<br>
+                        Copyright © 2020 E-Yudisium System<br>
                       </p>
               </div>
           </div>
@@ -18,6 +18,7 @@
 
     <script src="<?= base_url('assets/js/bootstrap.min.js') ?>"></script>
     <script src="<?= base_url('assets/js/bootstrap-datepicker.js') ?>"></script>
+    <script src="<?= base_url('assets/js/custome.js') ?>"></script>
     <script type="text/javascript">
         // When the document is ready
         $(document).ready(function () {

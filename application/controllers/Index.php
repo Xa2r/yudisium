@@ -24,8 +24,7 @@ class Index extends CI_Controller {
     public function index()
     {
         if ($this->session->userdata('id_user')) {
-             $this->load->view('frontend/templates/header');
-            $this->load->view('frontend/home');
+            redirect('home');
         } else {
             $this->load->view('index');
         }
@@ -36,6 +35,7 @@ class Index extends CI_Controller {
         if ($this->session->userdata('id_user')) {
             $this->load->view('frontend/templates/header');
             $this->load->view('frontend/home');
+            $this->load->view('frontend/templates/footer');
         } else {
             $this->load->view('frontend/login');
         }
@@ -47,7 +47,7 @@ class Index extends CI_Controller {
 
         if (!$userId) {
             $this->session->set_flashdata('danger', '<small>Sorry, you haven`t registered as a participant of the graduation, please contact the department</small>');
-            redirect('form_login');
+            redirect('index');
         } else {
             $user = $this->Login->loginUser();
             if ($user['msg'] == 'success') {
@@ -55,19 +55,25 @@ class Index extends CI_Controller {
                     'id_user' => $user['data']['id_user']
                 );
                 $this->session->set_userdata($data);
-                 $this->load->view('frontend/templates/header');
+                $nim = $this->session->userdata('id_user');
+                $data['user'] = $this->Select->getMahasiswaById($nim);
+                 $this->load->view('frontend/templates/header', $data);
                 $this->load->view('frontend/home');
+                $this->load->view('frontend/templates/footer');
             } else {
                 $this->session->set_flashdata('danger', '<small>Username or password not correct</small>');
-                redirect('form_login');
+                redirect('index');
             }
         }
     }
 
     public function home()
     {
-         $this->load->view('frontend/templates/header');
+        $nim = $this->session->userdata('id_user');
+         $data['user'] = $this->Select->getMahasiswaById($nim);
+         $this->load->view('frontend/templates/header', $data);
         $this->load->view('frontend/home');
+        $this->load->view('frontend/templates/footer');
     }
 
     public function logout()
@@ -80,8 +86,9 @@ class Index extends CI_Controller {
     {
         $nim = $this->session->userdata('id_user');
         $data['user'] = $this->Select->getMahasiswaById($nim);
-        $this->load->view('frontend/templates/header');
+        $this->load->view('frontend/templates/header', $data);
         $this->load->view('frontend/form_biodata', $data);
+        $this->load->view('frontend/templates/footer');
     }
 
     public function update()
@@ -103,6 +110,9 @@ class Index extends CI_Controller {
         $data['request'] = [json_decode($this->curl->simple_get($this->API_KEUANGAN.$nim)),
                                 json_decode($this->curl->simple_get($this->API_PERPUSTAKAAN.$nim))];
         $data['kategori'] = $this->Select->getCategory();
+        $data['user'] = $this->Select->getMahasiswaById($nim);
+        $this->load->view('frontend/templates/header', $data);
         $this->load->view('frontend/list_yudisium', $data);
+        $this->load->view('frontend/templates/footer');
     }
 }

@@ -3,7 +3,21 @@ body{
 	height: 100%;
 	font-family: 'Roboto', sans-serif;
 }
-
+.after-login input[type="text"],
+.after-login input[type="password"],
+.after-login input[type="email"],
+.after-login input[type="number"],
+.after-login textarea, 
+.after-login select,
+.after-login button{
+	border-radius: 12px !important;
+}
+.after-login .btn-success:hover{
+	background-color: #fff;
+	color: #5cb85c;
+	transition-duration: 300ms;
+	transition-property: background;
+}
 .container .jumbotron, .container-fluid .jumbotron{
 	border-radius: 0;
 }
@@ -22,7 +36,7 @@ nav.navbar.home{
     font-family: Viga;
     font-size: 32px;
 }
-#navbar .header-logo{
+#navbar-custome .header-logo{
 	background: #00000066;
     border-radius: 0 0 15px 12px;
     padding: 10px 12px;
@@ -32,11 +46,11 @@ nav.navbar.home{
 .row{
 	margin: 0;
 }
-#navbar{
+#navbar-custome{
 	padding: 0 40px;
 }
 
-#navbar form{
+#navbar-custome form{
 	margin-top: 18px;
 }
 .jumbotron{ 
@@ -178,10 +192,10 @@ nav.navbar.home{
 .after-login .jumbotron{
  height: 450px;
 }
-.after-login nav #navbar .header-logo img{
+.after-login nav #navbar-custome .header-logo img{
 	max-width: 50px !important;
 }
-.after-login nav #navbar .header-logo{
+.after-login nav #navbar-custome .header-logo{
 	margin-right: 20px;
 }
 .after-login .navbar-inverse .navbar-nav>li>a {
@@ -197,4 +211,133 @@ nav.navbar.home{
 .page-main.biodata .container{
 	width: 95%;
     margin: auto;
+}
+.page-main.biodata form .form-group > .input-group{
+	width: 85%;
+	padding-right: 15px;
+	padding-top: 3px;
+	float: right;
+}
+.page-main.biodata form .form-group > .control-label{
+	text-align: left;
+	width: 15%;
+}
+.page-main.biodata .form-group.submit{
+	text-align: center;
+	margin-top: 40px;
+}
+.page-main.biodata .form-group.submit button{
+	width: 35%;
+	height: 40px;
+	font-size: 16px;
+}
+.page-main.biodata form, .page-main.list .main{
+	width: 90%;
+    margin: auto;
+}
+
+footer{
+	background: #111;
+    border-top: 4px solid #585858;
+    padding: 7px;
+    margin-top: 50px;
+    color: #fff;
+}
+footer p{
+	margin: 7px 0;
+}
+/*===================================== Responsive =======================================================*/
+/* Mobile */
+@media only screen and (max-width : 767px) {
+	.after-login .navbar-header{
+		margin: 0 !important;
+	}
+	.after-login .navbar-header button{
+		background-color: #000;
+	}
+
+	.after-login.menu-on #navbar-custome{
+		width: 84%;
+		padding: 0 40px;
+	}
+	.after-login #navbar-custome{
+		top: 0;
+	    position: fixed;
+	    width: 0;
+	    height: 100%;
+	    display: block;
+	    background: #999;
+	    padding: 0;
+		webkit-transition: width 0.3s;
+   		-moz-transition: width 0.3s;
+    	-ms-transition: width 0.3s;
+    	transition: width 0.3s;
+	}
+	.after-login #navbar-custome > ul{
+		visibility: hidden;
+	}
+	.after-login #navbar-custome > ul > li:not(:first-child), .after-login #navbar-custome > ul.navbar-right > li{
+		border-bottom: 1px solid #fff; 
+	}
+	.after-login #navbar-custome > ul > li:not(:first-child) > a, .after-login #navbar-custome > ul.navbar-right > li > a{
+		padding: 20px;
+	}
+	.after-login.menu-on #navbar-custome > ul{
+		visibility: visible;
+	}
+	.after-login .jumbotron{
+		height: 380px;
+	}
+	.after-login .jumbotron .display-4{
+ 		text-align: center;
+    	font-size: 27px;
+    	margin-top: 115px;
+	}
+	.after-login .jumbotron .display-3{
+		font-size: 18px;
+		text-align: center;
+	}
+
+	.page-main.biodata form .form-group > .control-label{
+		width: 100%;
+	}
+	.page-main.biodata form .form-group > .input-group{
+		width: 100%;
+	}
+	.modal.login .modal-dialog{
+		margin: 10% auto;
+		min-width: 250px;
+	}
+	.modal.login .modal-content label{
+		display: none;
+	}
+	.modal.login .modal-content .input-group{
+		width: 100%;
+	}
+	.navbar.home .navbar-header{
+		display: none;
+	}
+	.navbar.home #navbar-custome {
+		display: block;
+    	top: 0;
+    	margin: 0;
+	}
+	.navbar.home #navbar-custome .navbar-nav{
+		margin: 0;
+	}
+	.navbar.home #navbar-custome .navbar-right{
+		display: none;
+	}
+	.navbar.home #navbar-custome .header-logo{
+		width: fit-content;
+	}
+	.navbar.home #navbar-custome .header-logo img{
+		max-width: 50px !important;
+	}
+	.before-login .jumbotron .container{
+		text-align: center;
+	}
+	.before-login .jumbotron{
+		height: 500px;
+	}
 }
