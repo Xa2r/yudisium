@@ -30,7 +30,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
     </head>
 
-    <body data-gr-c-s-loaded="true">
+    <body data-gr-c-s-loaded="true" class="before-login">
   <div class="container-fluid">
       <nav class="navbar home">      
         <div class="container-fluid">
@@ -43,7 +43,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             </button>
           </div>
 
-          <div id="navbar" class="navbar-collapse collapse">
+          <div id="navbar-custome" class="navbar-collapse collapse">
               <ul class="nav navbar-nav">
                 <li>
                   <a class="header-logo" href="<?= base_url('index') ?>">
@@ -136,11 +136,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   </div>
 
   <!-- footer -->
-  <footer style="background:#f4f4f4; border-top:5px solid #e3e3e3; padding:25px">
+  <footer>
           <div class="container">
               <div class="row">
                       <p class="footer" style="text-align:center">
-                        Copyright © 2016 E-Yudisium System<br>
+                        Copyright © 2020 E-Yudisium System<br>
                       </p>
               </div>
           </div>
