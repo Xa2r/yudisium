@@ -67,6 +67,9 @@ $route['update_kategori/(:num)'] = 'admin/edit/update/$1';
 $route['delete_kategori/(:num)'] = 'admin/remove/delete/$1';
 $route['aktif_mahasiswa'] = 'admin/add/addActiveMahasiswa';
 $route['delete_list/(:num)'] = 'admin/remove/removeList/$1';
+$route['add_bebas_lab'] = 'admin/add/addBebasLab';
+$route['remove_bebasLab/(:num)'] = 'admin/remove/removeBebasLab/$1';
+$route['update_bebasLab/(:num)'] = 'admin/edit/updateBebasLab/$1';
 
 /* frontend */
 $route['index'] = 'index';

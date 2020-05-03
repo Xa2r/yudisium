@@ -66,6 +66,8 @@ class Index extends CI_Controller {
     {
         $data['admin'] = $this->Login->getSessionAdmin($this->session->userdata('username'));
         $data['yud_mahasiswa'] = $this->Select->getYudisiumMahasiswa();
+        $data['list'] = $this->Select->getJurusan();
+        $data['kategori'] = $this->Select->getCategory();
         $this->load->view('admin/template/header');
         $this->load->view('admin/sidebar', $data);
         $this->load->view('admin/list_seleksi', $data);
@@ -75,6 +77,7 @@ class Index extends CI_Controller {
     public function laboran()
     {
         $data['admin'] = $this->Login->getSessionAdmin($this->session->userdata('username'));
+        $data['bebas_lab'] = $this->Select->getBebasLab();
         $this->load->view('admin/template/header');
         $this->load->view('admin/sidebar', $data);
         $this->load->view('admin/laboran', $data);

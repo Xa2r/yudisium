@@ -45,4 +45,28 @@ class Add extends CI_Controller
             }
         }
     }
+
+    public function addBebasLab()
+    {
+        $nim = $this->input->post('nim');
+        $userActive = $this->Select->getBebasLab();
+        $nimUser = array();
+        foreach ($userActive as $user) {
+            $nimUser[] = $user['nim'];
+        }
+
+        if (array_search($nim, $nimUser)) {
+            $this->session->set_flashdata('warning', 'Nim sudah aktif.');
+            redirect('laboran');
+        } else {
+            $insert = $this->Insert->addBebasLab();
+            if ($insert) {
+                $this->session->set_flashdata('success', 'Data berhasil diaktifkan.');
+                redirect('laboran');
+            } else {
+                $this->session->set_flashdata('danger', 'Data gagal diaktifkan.');
+                redirect('laboran');
+            }
+        }
+    }
 }
