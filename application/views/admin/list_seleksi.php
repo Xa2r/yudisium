@@ -75,7 +75,7 @@ function hajar() {
                               <td><?= $tgl_selesai; ?></td>
                               <td><?= $status; ?></td>
                 <td class="td-action">
-                    <a title="Lihat Persyaratan" class="btn btn-info btn-xs" data-toggle="collapse" href="#persaratan" aria-expanded="false" aria-controls="persaratan">
+                    <a title="Lihat Persyaratan" class="btn btn-info btn-xs" data-toggle="modal" href="#" data-target="#persaratan<?= $nim; ?>">
                       <i class="fas fa-search-plus"></i>
                     </a>
                                   
@@ -147,11 +147,34 @@ function hajar() {
       
   </div>
 
-  <!-- collapse list -->
+  <!-- modal list -->
   <br>
   <article>
-    <div class="collapse" id="persaratan">
-      <div class="card card-body">
+  <?php foreach ($list as $mhs):
+    $nim = $mhs['nim'];
+    $prodi = $mhs['nm_prodi'];
+    $nama = $mhs['nama'];
+    $tmp_lahir = $mhs['tmp_lahir'];
+    $tgl_lahir = $mhs['tgl_lahir'];
+    $alamat = $mhs['alamat'];
+    $agama = $mhs['kd_agama'];
+    $no_hp = $mhs['hp_mhs'];
+    $email = $mhs['email_mhs'];
+    $sekolah = $mhs['nm_sekolah'];
+    $jk = $mhs['j_kelamin'];
+    $status = $mhs['status_kawin'];
+    $nm_ortu = $mhs['nm_bpk_kandung'];
+    $pk_ortu = $mhs['kerja_bpk'];
+    $judul = $mhs['judul'];
+    $dosen1 = $mhs['dosen_pem_1'];
+    $dosen2 = $mhs['dosen_pem_2'];
+  ?>
+  <div class="modal fade" id="persaratan<?= $nim; ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+        </div>
         <div class="panel panel-primary">
           <div class="panel-heading">
             <h3 class="panel-title">Identitas Peserta Yudisium</h3>
@@ -162,126 +185,124 @@ function hajar() {
             </div>
             <div class="col-md-8">            
               <dl class="dl-horizontal">
+             
                 <dt>NIM</dt>
+                <dd><?= $nim; ?></dd>
                 <dt>Program Studi</dt>
+                <dd><?= $prodi; ?></dd>
                 <dt>Nama Lengkap</dt>
+                <dd><?= $nama; ?></dd>
                 <dt>Tempat/Tgl Lahir</dt>
+                <dd><?= $tmp_lahir; ?>/<?= $tgl_lahir ?></dd>
                 <dt>Alamat</dt>
+                <dd><?= $alamat; ?></dd>
                 <dt>Agama</dt>
+                <dd>
+                <?php if ($agama == 1) {
+                  echo 'ISLAM';
+                } elseif ($agama == 2) {
+                  echo 'KATHOLIK';
+                } elseif ($agama == 3) {
+                  echo 'PROTESTAN';
+                } elseif ($agama == 4) {
+                  echo 'HINDU';
+                } elseif ($agama == 5) {
+                  echo 'BUDHA';
+                } elseif ($agama == 6) {
+                  echo 'LAINNYA';
+                } ?></dd>
                 <dt>No HP</dt>
+                <dd><?= $no_hp; ?></dd>
                 <dt>Email</dt>
+                <dd><?= $email; ?></dd>
                 <dt>Asal SMA</dt>
+                <dd><?= $sekolah; ?></dd>
                 <dt>Jenis Kelamin</dt>
+                <dd><?= $jk; ?></dd>
                 <dt>Status</dt>
+                <dd><?= $status; ?></dd>
                 <dt>Nama Orang Tua</dt>
+                <dd><?= $nm_ortu; ?></dd>
                 <dt>Pekerjaan Orang Tua</dt>
+                <dd><?= $pk_ortu; ?></dd>
                 <dt>Judul Skripsi</dt>
+                <dd><?= $judul; ?></dd>
                 <dt>Dosen Pembimbing I</dt>
+                <dd><?= $dosen1; ?></dd>
                 <dt>Dosen Pembimbing II</dt>
+                <dd><?= $dosen2; ?></dd>
+              
               </dl>
             </div>
           </div>
         </div>
 
         <table class="table table-condensed table-bordered">
-      <thead>
-        <tr class="alert alert-success">
-          <th scope="row">No</th> 
-          <th>Kategori Persyaratan</th>   
-          <th>Tanggal</th>    
-          <th>Upload</th>                 
-          <th>Status</th>
-          <th>File</th>
-          <th>Action</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-                              <td>1</td><td>Biodata Peserta Yudisium</td> <td>  </td>                            
-                              <td><center><span class="text-danger"><i class="glyphicon glyphicon-remove"></i></span></center></td>
-                              <td><center><span class="text-danger"><i class="glyphicon glyphicon-remove"></i></span></center></td>
-                              <td><center><a href="index.php?view=list_yudisium_admin&amp;id=&amp;nim=14030066&amp;aksi=detail&amp;id=16" target="_blank"><button class="btn btn-info"> <i class="glyphicon glyphicon-search"> Lihat</i></button></a></center></td>
-                              <td><form action="" method="POST"><input type="hidden" name="nim" value="14030066"><input type="hidden" name="kdk" value="16"><input type="hidden" name="status_cek" value="B"><button type="submit" class="btn btn-primary" name="tombol_setuju" value="Setujui"> <span class="glyphicon glyphicon-pushpin" aria-hidden="true"> Ubah</span></button></form>
-                              </td>  
-                          </tr><tr>
-                              <td>2</td><td>Transkrip Nilai Yang Disetujui Akademik</td> <td>  </td>                            
-                              <td><center><span class="text-danger"><i class="glyphicon glyphicon-remove"></i></span></center></td>
-                              <td><center><span class="text-danger"><i class="glyphicon glyphicon-remove"></i></span></center></td>
-                              <td><center><a href="index.php?view=list_yudisium_admin&amp;id=&amp;nim=14030066&amp;aksi=detail&amp;id=17" target="_blank"><button class="btn btn-info"> <i class="glyphicon glyphicon-search"> Lihat</i></button></a></center></td>
-                              <td><form action="" method="POST"><input type="hidden" name="nim" value="14030066"><input type="hidden" name="kdk" value="17"><input type="hidden" name="status_cek" value="B"><button type="submit" class="btn btn-primary" name="tombol_setuju" value="Setujui"> <span class="glyphicon glyphicon-pushpin" aria-hidden="true"> Ubah</span></button></form>
-                              </td>  
-                          </tr><tr>
-                              <td>3</td><td>Tanda Terima Skripsi / TA</td> <td>  </td>                            
-                              <td><center><span class="text-danger"><i class="glyphicon glyphicon-remove"></i></span></center></td>
-                              <td><center><span class="text-danger"><i class="glyphicon glyphicon-remove"></i></span></center></td>
-                              <td><center><a href="index.php?view=list_yudisium_admin&amp;id=&amp;nim=14030066&amp;aksi=detail&amp;id=18" target="_blank"><button class="btn btn-info"> <i class="glyphicon glyphicon-search"> Lihat</i></button></a></center></td>
-                              <td><form action="" method="POST"><input type="hidden" name="nim" value="14030066"><input type="hidden" name="kdk" value="18"><input type="hidden" name="status_cek" value="B"><button type="submit" class="btn btn-primary" name="tombol_setuju" value="Setujui"> <span class="glyphicon glyphicon-pushpin" aria-hidden="true"> Ubah</span></button></form>
-                              </td>  
-                          </tr><tr>
-                              <td>4</td><td>Foto Terbaru ( Almamater, kemeja putih, dasi hitam)</td> <td>  </td>                            
-                              <td><center><span class="text-danger"><i class="glyphicon glyphicon-remove"></i></span></center></td>
-                              <td><center><span class="text-danger"><i class="glyphicon glyphicon-remove"></i></span></center></td>
-                              <td><center><a href="index.php?view=list_yudisium_admin&amp;id=&amp;nim=14030066&amp;aksi=detail&amp;id=19" target="_blank"><button class="btn btn-info"> <i class="glyphicon glyphicon-search"> Lihat</i></button></a></center></td>
-                              <td><form action="" method="POST"><input type="hidden" name="nim" value="14030066"><input type="hidden" name="kdk" value="19"><input type="hidden" name="status_cek" value="B"><button type="submit" class="btn btn-primary" name="tombol_setuju" value="Setujui"> <span class="glyphicon glyphicon-pushpin" aria-hidden="true"> Ubah</span></button></form>
-                              </td>  
-                          </tr><tr>
-                              <td>5</td><td>Surat Bebas Perpustakaan</td> <td>  </td>                            
-                              <td><center><span class="text-danger"><i class="glyphicon glyphicon-remove"></i></span></center></td>
-                              <td><center><span class="text-danger"><i class="glyphicon glyphicon-remove"></i></span></center></td>
-                              <td><center><a href="index.php?view=list_yudisium_admin&amp;id=&amp;nim=14030066&amp;aksi=detail&amp;id=2" target="_blank"><button class="btn btn-info"> <i class="glyphicon glyphicon-search"> Lihat</i></button></a></center></td>
-                              <td><form action="" method="POST"><input type="hidden" name="nim" value="14030066"><input type="hidden" name="kdk" value="2"><input type="hidden" name="status_cek" value="B"><button type="submit" class="btn btn-primary" name="tombol_setuju" value="Setujui"> <span class="glyphicon glyphicon-pushpin" aria-hidden="true"> Ubah</span></button></form>
-                              </td>  
-                          </tr><tr>
-                              <td>6</td><td>Pembayaran Wisuda</td> <td>  </td>                            
-                              <td><center><span class="text-danger"><i class="glyphicon glyphicon-remove"></i></span></center></td>
-                              <td><center><span class="text-danger"><i class="glyphicon glyphicon-remove"></i></span></center></td>
-                              <td><center><a href="index.php?view=list_yudisium_admin&amp;id=&amp;nim=14030066&amp;aksi=detail&amp;id=20" target="_blank"><button class="btn btn-info"> <i class="glyphicon glyphicon-search"> Lihat</i></button></a></center></td>
-                              <td><form action="" method="POST"><input type="hidden" name="nim" value="14030066"><input type="hidden" name="kdk" value="20"><input type="hidden" name="status_cek" value="B"><button type="submit" class="btn btn-primary" name="tombol_setuju" value="Setujui"> <span class="glyphicon glyphicon-pushpin" aria-hidden="true"> Ubah</span></button></form>
-                              </td>  
-                          </tr><tr>
-                              <td>7</td><td>Scan Ijazah SMA</td> <td>  </td>                            
-                              <td><center><span class="text-danger"><i class="glyphicon glyphicon-remove"></i></span></center></td>
-                              <td><center><span class="text-danger"><i class="glyphicon glyphicon-remove"></i></span></center></td>
-                              <td><center><a href="index.php?view=list_yudisium_admin&amp;id=&amp;nim=14030066&amp;aksi=detail&amp;id=21" target="_blank"><button class="btn btn-info"> <i class="glyphicon glyphicon-search"> Lihat</i></button></a></center></td>
-                              <td><form action="" method="POST"><input type="hidden" name="nim" value="14030066"><input type="hidden" name="kdk" value="21"><input type="hidden" name="status_cek" value="B"><button type="submit" class="btn btn-primary" name="tombol_setuju" value="Setujui"> <span class="glyphicon glyphicon-pushpin" aria-hidden="true"> Ubah</span></button></form>
-                              </td>  
-                          </tr><tr>
-                              <td>8</td><td>Serifikat TOEFL</td> <td>  </td>                            
-                              <td><center><span class="text-danger"><i class="glyphicon glyphicon-remove"></i></span></center></td>
-                              <td><center><span class="text-danger"><i class="glyphicon glyphicon-remove"></i></span></center></td>
-                              <td><center><a href="index.php?view=list_yudisium_admin&amp;id=&amp;nim=14030066&amp;aksi=detail&amp;id=22" target="_blank"><button class="btn btn-info"> <i class="glyphicon glyphicon-search"> Lihat</i></button></a></center></td>
-                              <td><form action="" method="POST"><input type="hidden" name="nim" value="14030066"><input type="hidden" name="kdk" value="22"><input type="hidden" name="status_cek" value="B"><button type="submit" class="btn btn-primary" name="tombol_setuju" value="Setujui"> <span class="glyphicon glyphicon-pushpin" aria-hidden="true"> Ubah</span></button></form>
-                              </td>  
-                          </tr><tr>
-                              <td>9</td><td>Surat Bebas Inherent</td> <td>  </td>                            
-                              <td><center><span class="text-danger"><i class="glyphicon glyphicon-remove"></i></span></center></td>
-                              <td><center><span class="text-danger"><i class="glyphicon glyphicon-remove"></i></span></center></td>
-                              <td><center><a href="index.php?view=list_yudisium_admin&amp;id=&amp;nim=14030066&amp;aksi=detail&amp;id=3" target="_blank"><button class="btn btn-info"> <i class="glyphicon glyphicon-search"> Lihat</i></button></a></center></td>
-                              <td><form action="" method="POST"><input type="hidden" name="nim" value="14030066"><input type="hidden" name="kdk" value="3"><input type="hidden" name="status_cek" value="B"><button type="submit" class="btn btn-primary" name="tombol_setuju" value="Setujui"> <span class="glyphicon glyphicon-pushpin" aria-hidden="true"> Ubah</span></button></form>
-                              </td>  
-                          </tr><tr>
-                              <td>10</td><td>Surat Bebas Laboratorium</td> <td>13 Januari 2019</td>                            
-                              <td><center><span class="text-success"><i class="glyphicon glyphicon-ok"></i></span></center></td>
-                              <td><center><span class="text-danger"><i class="glyphicon glyphicon-remove"></i></span></center></td>
-                              <td><center><a href="index.php?view=list_yudisium_admin&amp;id=&amp;nim=14030066&amp;aksi=detail&amp;id=4" target="_blank"><button class="btn btn-info"> <i class="glyphicon glyphicon-search"> Lihat</i></button></a></center></td>
-                              <td><form action="" method="POST"><input type="hidden" name="nim" value="14030066"><input type="hidden" name="kdk" value="4"><input type="hidden" name="status_cek" value="B"><button type="submit" class="btn btn-primary" name="tombol_setuju" value="Setujui"> <span class="glyphicon glyphicon-pushpin" aria-hidden="true"> Ubah</span></button></form>
-                              </td>  
-                          </tr>              </tbody>
-              <tfoot>
-                <tr>
-                    <td colspan="7"> <center>
-                        <form method="POST" action="">
-                            <input type="hidden" name="nim" value="14030066">
-                            <input type="radio" name="hasil" value="Lolos">Lolos Verifikasi
-                            <input type="radio" name="hasil" value="Gagal">Gagal Verifikasi<br>
-                            <button type="submit" name="ubah_status" class="btn btn-danger">Simpan Verifikasi</button> <br>*Klik tombol ini jika sudah melengkapi semua persyaratan.</form></center>
-                         </td>
-                                        </tr>
-              </tfoot>
+          <thead>
+            <tr class="alert alert-success">
+              <th scope="row">No</th> 
+              <th>Kategori Persyaratan</th>   
+              <th>Tanggal</th>    
+              <th>Upload</th>                 
+              <th>Status</th>
+              <th>File</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+          <?php
+          $no = 1;
+          foreach ($kategori as $cat):
+            $nm_kategori = $cat['nama_kategori'];
+            $status = $cat['status'];
+          ?>
+            <tr>
+              <td><?= $no; ?></td>
+              <td><?= $nm_kategori ?></td>
+              <td></td>
+              <?php if ($status == 'A'): ?>                         
+                <td align='center'><span class='text-info'><i class='glyphicon glyphicon-ok'></i></span></td>
+              <?php else: ?>
+                <td><center><span class="text-danger"><i class="glyphicon glyphicon-remove"></i></span></center></td>
+              <?php endif; ?>
+              <td><center><span class="text-danger"><i class="glyphicon glyphicon-remove"></i></span></center></td>
+              <td><center><a href="#" target="_blank"><button class="btn btn-info"> <i class="glyphicon glyphicon-search"> Lihat</i></button></a></center></td>
+              <td>
+                <form action="" method="POST">
+                  <input type="hidden" name="nim" value="">
+                  <input type="hidden" name="kdk" value="16">
+                  <input type="hidden" name="status_cek" value="B">
+                  <button type="submit" class="btn btn-primary" name="tombol_setuju" value="Setujui"> 
+                    <span class="glyphicon glyphicon-pushpin" aria-hidden="true"> Ubah</span>
+                  </button>
+                </form>
+              </td>
+            </tr>
+          <?php
+            $no++;
+            endforeach; 
+          ?>              
+          </tbody>
+          <tfoot>
+            <tr>
+              <td colspan="7"> <center>
+                <form method="POST" action="">
+                  <input type="hidden" name="nim" value="">
+                    <input type="radio" name="hasil" value="Lolos">Lolos Verifikasi
+                    <input type="radio" name="hasil" value="Gagal">Gagal Verifikasi
+                    <br>
+                    <button type="submit" name="ubah_status" class="btn btn-danger">Simpan Verifikasi</button> 
+                    <br>
+                    *Klik tombol ini jika sudah melengkapi semua persyaratan.
+                </form></center>
+              </td>
+            </tr>
+          </tfoot>
         </table>
-
       </div>
     </div>
+  </div>
+  <?php endforeach ?>
   </article>
 
 </div>

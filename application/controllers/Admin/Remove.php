@@ -31,4 +31,16 @@ class Remove extends CI_Controller
             redirect('list_seleksi');
         }
     }
+
+    public function removeBebasLab($nim)
+    {
+        $delete = $this->Delete->deleteBebasLab($nim);
+        if ($delete) {
+            $this->session->set_flashdata('success', 'Data berhasil dihapus');
+            redirect('laboran');
+        } else {
+            $this->session->set_flashdata('danger', 'Data gagal dihapus');
+            redirect('laboran');
+        }
+    }
 }

@@ -25,4 +25,15 @@ class Insert extends CI_Model
 
         return $this->db->insert('sia.d_yud_mahasiswa', $auth);
     }
+
+    public function addBebasLab()
+    {
+        $auth = array(
+            'nim' => $this->input->post('nim', TRUE),
+            'tgl_cetak' => date('Y-m-d'),
+            'status' => 'A'
+        );
+
+        return $this->db->insert('sia.bebas_lab', $auth);
+    }
 }
