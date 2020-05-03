@@ -6,6 +6,7 @@ class Add extends CI_Controller
     {
         parent::__construct();
         $this->load->model('Insert');
+        $this->load->model('Select');
         $this->load->library('session');
     }
     
@@ -18,6 +19,30 @@ class Add extends CI_Controller
         } else {
             $this->session->set_flashdata('danger', 'Data kategori gagal ditambahkan.');
             redirect('kategory_yudisium');
+        }
+    }
+
+    public function addActiveMahasiswa()
+    {
+        $nim = $this->input->post('nim');
+        $userActive = $this->Select->getMahasiswaActive();
+        $nimUser = array();
+        foreach ($userActive as $user) {
+            $nimUser[] = $user['nim'];
+        }
+
+        if (array_search($nim, $nimUser)) {
+            $this->session->set_flashdata('warning', 'Data sudah aktif.');
+            redirect('list_seleksi');
+        } else {
+            $insert = $this->Insert->addActiveMahasiswa();
+            if ($insert) {
+                $this->session->set_flashdata('success', 'Data berhasil diaktifkan.');
+                redirect('list_seleksi');
+            } else {
+                $this->session->set_flashdata('danger', 'Data gagal diaktifkan.');
+                redirect('list_seleksi');
+            }
         }
     }
 }

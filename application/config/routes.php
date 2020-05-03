@@ -65,6 +65,8 @@ $route['add_category'] = 'admin/add/addCategory';
 $route['get_mahasiswa'] = 'admin/index/getMahasiswaById';
 $route['update_kategori/(:num)'] = 'admin/edit/update/$1';
 $route['delete_kategori/(:num)'] = 'admin/remove/delete/$1';
+$route['aktif_mahasiswa'] = 'admin/add/addActiveMahasiswa';
+$route['delete_list/(:num)'] = 'admin/remove/removeList/$1';
 
 /* frontend */
 $route['index'] = 'index';
