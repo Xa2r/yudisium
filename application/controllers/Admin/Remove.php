@@ -19,4 +19,16 @@ class Remove extends CI_Controller
             redirect('kategory_yudisium');
         }
     }
+
+    public function removeList($nim)
+    {
+        $delete = $this->Delete->deleteListSeleksi($nim);
+        if ($delete) {
+            $this->session->set_flashdata('success', 'Data berhasil dihapus');
+            redirect('list_seleksi');
+        } else {
+            $this->session->set_flashdata('danger', 'Data gagal dihapus');
+            redirect('list_seleksi');
+        }
+    }
 }

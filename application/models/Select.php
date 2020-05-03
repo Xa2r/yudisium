@@ -35,4 +35,10 @@ class Select extends CI_Model
 
         return $userId;
     }
+
+    public function getMahasiswaActive()
+    {
+        $mahasiswa = $this->db->get('sia.d_yud_mahasiswa');
+        return $mahasiswa->result_array();
+    }
 }

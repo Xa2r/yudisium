@@ -36,8 +36,7 @@ function hajar() {
 <div class="row">
   <div class="col-md-12">
     <article> 
-    <div class="alert alert-success">
-    Daftar File Persyaratan Yudisium Program Studi     </div>
+    <?php $this->load->view('admin/template/flash-message'); ?>
         <a style="margin-bottom:5px" class="btn btn-primary btn-sm" href="#" data-toggle="modal" data-target="#tambahMahasiswa">Tambah Aktif Yudisium</a>
     <!-- <div id="example_wrapper" class="dataTables_wrapper no-footer"><div class="dataTables_length" id="example_length">
         <label>Show
@@ -78,7 +77,7 @@ function hajar() {
                 <td class="td-action">
                     <a title="Lihat Persyaratan" href="index.php?view=list_yudisium_admin&amp;id=&amp;nim=14030066" class="btn btn-info btn-xs"><i class="fas fa-search-plus"></i></a>
                                   
-                    <a title="Hapus" href="index.php?view=list_seleksi&amp;deletea=14030066" class="btn btn-danger btn-xs">
+                    <a title="Hapus" href="<?= base_url('delete_list/'.$nim) ?>" class="btn btn-danger btn-xs">
                     <i class="fas fa-trash-alt"></i></a>
                 </td>  
               </tr>
@@ -111,7 +110,7 @@ function hajar() {
             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
             <h4 class="modal-title" id="myModalLabel">Tambahkan Peserta Yudisium </h4>
           </div>
-         <form class="form-horizontal" action="index.php?view=list_seleksi" method="POST">  
+         <form class="form-horizontal" action="<?= base_url('aktif_mahasiswa') ?>" method="POST">  
             <div class="modal-body">              
                 <div class="form-group">
                   <label for="nim" class="col-sm-2 control-label">NIM</label>

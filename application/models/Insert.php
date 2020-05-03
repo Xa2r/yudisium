@@ -14,4 +14,15 @@ class Insert extends CI_Model
 
         return $this->db->insert('sia.d_yud_kategori', $auth);
     }
+
+    public function addActiveMahasiswa()
+    {
+        $auth = array(
+            'nim' => $this->input->post('nim', TRUE),
+            'tanggal_aktif' => date('Y-m-d'),
+            'status_aktif' => 'A'
+        );
+
+        return $this->db->insert('sia.d_yud_mahasiswa', $auth);
+    }
 }
