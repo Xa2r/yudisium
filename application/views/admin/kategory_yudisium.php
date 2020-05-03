@@ -30,6 +30,7 @@
         <?php
         $no = 1; 
         foreach ($kategori as $data):
+          $kd_kategori = $data['kd_kategori'];
           $prodi = $data['kd_prodi'];
           $nama_kategori = $data['nama_kategori'];
           $status = $data['status'];
@@ -44,8 +45,8 @@
             <td><?= $status; ?></td>
             <td><?= $status_upload; ?></td>
             <td><?= $format; ?></td>
-            <td style="width:110px" class="td-action"><a class="open-AddBookDialog btn btn-warning btn-xs" data-id="1" data-id1="Semua Jurusan" data-id2="Surat Bebas Keuangan" data-id3="KEU" data-id4="A" data-id5="T" data-toggle="modal" href="#" data-target="#editkategori"><i class="fas fa-edit"></i></a>
-              <a class="btn btn-danger btn-xs" href="index.php?view=kategoriyudisium&amp;deletea=1"><i class="fas fa-trash-alt"></i></a>
+            <td style="width:110px" class="td-action"><a class="open-AddBookDialog btn btn-warning btn-xs" data-id="1" data-id1="Semua Jurusan" data-id2="Surat Bebas Keuangan" data-id3="KEU" data-id4="A" data-id5="T" data-toggle="modal" href="#" data-target="#editkategori<?= $kd_kategori; ?>"><i class="fas fa-edit"></i></a>
+              <a class="btn btn-danger btn-xs" href="<?= base_url('delete_kategori/'.$kd_kategori) ?>"><i class="fas fa-trash-alt"></i></a>
             </td>
         </tr>
         <?php $no++;
@@ -75,7 +76,12 @@
                   <div class="col-sm-8">
                     <select class="form-control" id="prodi" name="prodi" required="">
                       
-                      <option value="Aeronautika">Aeronautika</option><option value="Elektro">Teknik Elektro</option><option value="Industri">Teknik Industri</option><option value="Informatika">Teknik Informatika</option><option value="Mesin">Teknik Mesin</option><option value="Penerbangan">Teknik Penerbangan</option>   
+                      <option value="Aeronautika">Aeronautika</option>
+                      <option value="Elektro">Teknik Elektro</option>
+                      <option value="Industri">Teknik Industri</option>
+                      <option value="Informatika">Teknik Informatika</option>
+                      <option value="Mesin">Teknik Mesin</option>
+                      <option value="Penerbangan">Teknik Penerbangan</option>   
                       <option value="ALL">Semua Jurusan</option>
                     </select>
                   </div>
@@ -126,7 +132,16 @@
 
 
     <!-- Modal Edit Data Syarat -->
-    <div class="modal fade" id="editkategori" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <?php 
+      foreach ($kategori as $data):
+        $kd_kategori = $data['kd_kategori'];
+        $prodi = $data['kd_prodi'];
+        $nama_kategori = $data['nama_kategori'];
+        $status = $data['status'];
+        $status_upload = $data['status_upload'];
+        $format = $data['format'];
+    ?>
+    <div class="modal fade" id="editkategori<?= $kd_kategori; ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
@@ -134,16 +149,20 @@
             <h4 class="modal-title" id="myModalLabel">Edit Kategori</h4>
           </div>
           <div class="modal-body">
-              <form class="form-horizontal" action="index.php?view=kategoriyudisium" method="POST">
+              <form class="form-horizontal" action="<?= base_url('update_kategori/'.$kd_kategori) ?>" method="POST">
                               
                 <input type="hidden" class="form-control" id="bookId" name="kd_kategori">
                  <div class="form-group">
                   <label for="a" class="col-sm-3 control-label">Prodi</label>
                   <div class="col-sm-8">
                     <select class="form-control" id="bookId1" name="prodi" required="">
-                      <option value="ALL" selected="">Semua Jurusan</option>
-                      <option value="">Aeronautika</option><option value="">Teknik Elektro</option><option value="">Teknik Industri</option><option value="">Teknik Informatika</option><option value="">Teknik Mesin</option><option value="">Teknik Penerbangan</option>   
-                      <option value="ALL">Semua Jurusan</option>
+                      <option value="ALL" <?= ($prodi == 'ALL')?'selected':'' ?>>Semua Jurusan</option>
+                      <option value="Aeronautika" <?= ($prodi == 'Aeronautika')?'selected':'' ?>>Aeronautika</option>
+                      <option value="Elektro" <?= ($prodi == 'Elektro')?'selected':'' ?>>Teknik Elektro</option>
+                      <option value="Industri" <?= ($prodi == 'Industri')?'selected':'' ?>>Teknik Industri</option>
+                      <option value="Informatika" <?= ($prodi == 'Informatika')?'selected':'' ?>>Teknik Informatika</option>
+                      <option value="Mesin" <?= ($prodi == 'Mesin')?'selected':'' ?>>Teknik Mesin</option>
+                      <option value="Penerbangan" <?= ($prodi == 'Penerbangan')?'selected':'' ?>>Teknik Penerbangan</option>   
                     </select>
                   </div>
                 </div>
@@ -151,16 +170,16 @@
                 <div class="form-group">
                   <label for="a" class="col-sm-3 control-label">Nama Kategori</label>
                   <div class="col-sm-8">
-                    <input type="text" class="form-control" id="bookId2" name="kategori" required="">
+                    <input type="text" class="form-control" id="bookId2" name="kategori" required="" value="<?= $nama_kategori; ?>">
                   </div>
                 </div>
                 
                 <div class="form-group">
                   <label for="a" class="col-sm-3 control-label">Status</label>
                   <div class="col-sm-8">
-                    <select class="form-control" id="bookId4" name="status_upload" required="">
-                      <option value="A">Aktif</option>
-                      <option value="T">Tidak Aktif</option>
+                    <select class="form-control" id="bookId4" name="status" required="">
+                      <option value="A" <?= ($status == 'A')?'selected':'' ?>>Aktif</option>
+                      <option value="T" <?= ($status == 'T')?'selected':'' ?>>Tidak Aktif</option>
                     </select>
                   </div>
                 </div>
@@ -169,8 +188,8 @@
                   <label for="a" class="col-sm-3 control-label">Status Upload</label>
                   <div class="col-sm-8">
                     <select class="form-control" id="bookId5" name="status_upload" required="">
-                      <option value="A">Aktif</option>
-                      <option value="T">Tidak Aktif</option>
+                      <option value="A" <?= ($status_upload == 'A')?'selected':'' ?>>Aktif</option>
+                      <option value="T" <?= ($status_upload == 'T')?'selected':'' ?>>Tidak Aktif</option>
                     </select>
                   </div>
                 </div>
@@ -178,18 +197,19 @@
                 <div class="form-group">
                   <label for="a" class="col-sm-3 control-label">Format</label>
                   <div class="col-sm-8">
-                    <input type="text" class="form-control" id="bookId3" name="format" required="">
+                    <input type="text" class="form-control" id="bookId3" name="format" required="" value="<?= $format ?>">
                   </div>
                 </div>  
-                
-          </form></div>
-          <div style="clear:both" class="modal-footer">
+                <div style="clear:both" class="modal-footer">
             <button type="submit" name="updatea" class="btn btn-primary btn-sm">Update</button>
           </div>
+          </form></div>
+          
           
         </div>
       </div>
     </div>
+    <?php endforeach; ?>
 
 <script type="text/javascript">
   $(document).ready(function() {

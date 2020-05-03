@@ -34,4 +34,20 @@ class Update extends CI_Model
 
         return $update;
     }
+
+    public function updateCategory($kd_kategori)
+    {
+        $data = array(
+            'kd_prodi' => $this->input->post('prodi', TRUE),
+            'nama_kategori' => $this->input->post('kategori', TRUE),
+            'status' => $this->input->post('status', TRUE),
+            'format' => $this->input->post('format', TRUE),
+            'status_upload' => $this->input->post('status_upload', TRUE)
+        );
+
+        $this->db->where('kd_kategori', $kd_kategori);
+        $update = $this->db->update('sia.d_yud_kategori', $data);
+
+        return $update;
+    }
 }

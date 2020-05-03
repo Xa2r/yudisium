@@ -63,6 +63,8 @@ $route['admin_logout'] = 'admin/index/logout';
 $route['edit_profile'] = 'admin/index/update';
 $route['add_category'] = 'admin/add/addCategory';
 $route['get_mahasiswa'] = 'admin/index/getMahasiswaById';
+$route['update_kategori/(:num)'] = 'admin/edit/update/$1';
+$route['delete_kategori/(:num)'] = 'admin/remove/delete/$1';
 
 /* frontend */
 $route['index'] = 'index';
