@@ -111,6 +111,7 @@ class Index extends CI_Controller {
                                 json_decode($this->curl->simple_get($this->API_PERPUSTAKAAN.$nim))];
         $data['kategori'] = $this->Select->getCategory();
         $data['user'] = $this->Select->getMahasiswaById($nim);
+        $data['bebas_lab'] = $this->Select->getBebasLabById($nim);
         $this->load->view('frontend/templates/header', $data);
         $this->load->view('frontend/list_yudisium', $data);
         $this->load->view('frontend/templates/footer');
