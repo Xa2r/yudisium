@@ -56,4 +56,12 @@ class Select extends CI_Model
         $data = $this->db->get('sia.bebas_lab');
         return $data->result_array();
     }
+
+    public function getBebasLabById($nim)
+    {
+        $data = $this->db->get_where('sia.bebas_lab', array('nim' => $nim))
+                ->result_array();
+
+        return $data;
+    }
 }

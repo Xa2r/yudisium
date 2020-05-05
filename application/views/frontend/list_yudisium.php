@@ -63,6 +63,8 @@
                   <?php else : ?>
                   <td align='center'><span class='text-danger'><i class='glyphicon glyphicon-remove'></i></span></td>
                   <?php endif; ?>
+
+                  <?php /* get rest api */ ?>
                   <?php if($request) : ?>
                     <?php foreach ($request as $index => $value): ?>
                       <?php if ($value->nama_Category == $nama_kategori): ?>
@@ -75,9 +77,34 @@
                         <?php endforeach; ?>
                       <?php endif; ?>
                     <?php endforeach; ?>
-                  <?php else : ?>
-                    <td align='center'><span class='text-danger'><i class='glyphicon glyphicon-remove'></i></span></td>
                   <?php endif; ?>
+
+                  <?php /* get surat bebas lab */ ?>
+                  <?php if ($nama_kategori == 'Surat Bebas Laboratorium') : ?>
+                    <?php if ($bebas_lab) : ?>
+                      <?php foreach ($bebas_lab as $value) : ?>
+                        <?php if ($value['status'] == 'A') : ?>
+                          <td align='center'><span class='text-info'><i class='glyphicon glyphicon-ok'></i></span></td>
+                        <?php else : ?>
+                          <td align='center'><span class='text-danger'><i class='glyphicon glyphicon-remove'></i></span></td>
+                        <?php endif; ?>
+                      <?php endforeach; ?>
+                    <?php else : ?>
+                      <td align='center'><span class='text-danger'><i class='glyphicon glyphicon-remove'></i></span></td>
+                    <?php endif; ?>
+                  <?php endif; ?>
+
+                  <?php /* request biodata */ ?>
+                  <?php if ($nama_kategori == 'Biodata Peserta Yudisium') : ?>
+                    <?php foreach ($user as $key) : ?>
+                      <?php if ($key['nim']) : ?>
+                        <td align='center'><span class='text-info'><i class='glyphicon glyphicon-ok'></i></span></td>
+                      <?php else : ?>
+                        <td align='center'><span class='text-danger'><i class='glyphicon glyphicon-remove'></i></span></td>
+                      <?php endif; ?>
+                    <?php endforeach; ?>
+                  <?php endif; ?>
+
                   <td align="left"> <a href="" name="edit" class="btn btn-primary sm" data-toggle="tooltip" data-placement="left" title="Unggah"><span class="glyphicon glyphicon-open"></span></a>
                   </td>      
                 </tr>
