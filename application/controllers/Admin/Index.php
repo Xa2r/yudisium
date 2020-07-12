@@ -1,6 +1,8 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
+use Spipu\Html2Pdf\Html2Pdf;
+
 class Index extends CI_Controller {
 
     var $API_PERPUSTAKAAN = "";
@@ -117,5 +119,24 @@ class Index extends CI_Controller {
         $nim = $this->input->get('nim');
         $data['mahasiswa'] = $this->Select->getMahasiswaById($nim);
         $this->load->view('admin/template/data_mahasiswa', $data);
+    }
+
+    function cetakBebasLab($nim){
+        $data['admin'] = $this->Login->getSessionAdmin($this->session->userdata('username'));
+        $data['mahasiswa'] = $this->Select->getMahasiswaById($nim);
+        try {
+            ob_start();
+            $this->load->view('admin/template/surat_bebas_lab', $data);
+            $content = ob_get_clean();
+        
+            $html2pdf = new Html2Pdf('P', 'A4', 'en');
+            $html2pdf->writeHTML($content);
+            $html2pdf->output('surat_bebeas_lab.pdf');
+        } catch (Html2PdfException $e) {
+            $html2pdf->clean();
+        
+            $formatter = new ExceptionFormatter($e);
+            echo $formatter->getHtmlMessage();
+        }
     }
 }
