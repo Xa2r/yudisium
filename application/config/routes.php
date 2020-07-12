@@ -70,6 +70,8 @@ $route['delete_list/(:num)'] = 'admin/remove/removeList/$1';
 $route['add_bebas_lab'] = 'admin/add/addBebasLab';
 $route['remove_bebasLab/(:num)'] = 'admin/remove/removeBebasLab/$1';
 $route['update_bebasLab/(:num)'] = 'admin/edit/updateBebasLab/$1';
+$route['add_status_verifikasi'] = 'admin/add/addStatusVerifikasi';
+$route['update_status_verifikasi/(:num)'] = 'admin/edit/updateStatusVerifikasi/$1';
 
 /* frontend */
 $route['index'] = 'index';
@@ -80,3 +82,5 @@ $route['form_biodata'] = 'index/biodata';
 $route['list_yudisium'] = 'index/list';
 $route['logout_user'] = 'index/logout';
 $route['update_user'] = 'index/update';
+$route['upload_image/(:num)'] = 'index/uploadImg/$1';
+$route['updateImage/(:num)'] = 'index/updateImage/$1';

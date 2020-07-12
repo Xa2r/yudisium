@@ -38,19 +38,6 @@ function hajar() {
     <article> 
     <?php $this->load->view('admin/template/flash-message'); ?>
         <a style="margin-bottom:5px" class="btn btn-primary btn-sm" href="#" data-toggle="modal" data-target="#tambahMahasiswa">Tambah Aktif Yudisium</a>
-    <!-- <div id="example_wrapper" class="dataTables_wrapper no-footer"><div class="dataTables_length" id="example_length">
-        <label>Show
-            <select name="example_length" aria-controls="example" class="">
-                <option value="10">10</option>
-                <option value="25">25</option>
-                <option value="50">50</option>
-                <option value="100">100</option>
-            </select>entries
-        </label>
-    </div>
-    <div id="example_filter" class="dataTables_filter">
-        <label>Search:<input type="search" class="" placeholder="" aria-controls="example"></label>
-    </div> -->
     <div id="example_wrapper" class="dataTables_wrapper no-footer table-responsive">
         <table class="table table-condensed table-bordered dataTable no-footer table-striped" id="example" role="grid" aria-describedby="example_info">
           <thead>
@@ -88,14 +75,6 @@ function hajar() {
           endforeach; ?>
               </tbody>
     </table>
-    <!-- <div class="dataTables_info" id="example_info" role="status" aria-live="polite">Showing 1 to 10 of 10 entries</div>
-    <div class="dataTables_paginate paging_simple_numbers" id="example_paginate">
-        <a class="paginate_button previous disabled" aria-controls="example" data-dt-idx="0" tabindex="0" id="example_previous">Previous</a>
-        <span>
-            <a class="paginate_button current" aria-controls="example" data-dt-idx="1" tabindex="0">1</a>
-        </span>
-        <a class="paginate_button next disabled" aria-controls="example" data-dt-idx="2" tabindex="0" id="example_next">Next</a>
-    </div> -->
 </div>
 </div>
           <nav>
@@ -253,19 +232,74 @@ function hajar() {
           <?php
           $no = 1;
           foreach ($kategori as $cat):
+            $kd_kategori = $cat['kd_kategori'];
             $nm_kategori = $cat['nama_kategori'];
             $status = $cat['status'];
           ?>
+
+          <?php
+          $requestCategory = array();
+          $requestMahasiswa = array(); 
+          foreach ($request as $index => $value) {
+            $requestCategory[] = $value->nama_Category;
+            $requestMahasiswa = $value->mahasiswa;
+          } ?>
             <tr>
               <td><?= $no; ?></td>
               <td><?= $nm_kategori ?></td>
-              <td></td>
+              <td align='center'>
+              <?php /* if rest api keuangan & perpus*/ ?>
+              <?php if (false !== array_search($nm_kategori, $requestCategory)) : ?>
+                <?php foreach ($requestMahasiswa as $child) : ?>
+                  <?= $child->tangga_bayar; ?>
+                <?php endforeach; ?>
+
+              <?php /* if else */ ?>
+              <?php else : ?>
+                <?php $image = $obj->getImagesByCategory($nim, $kd_kategori); ?>
+                <?php if (!$image) : ?>
+                  <span class='text-danger'><i class='glyphicon glyphicon-remove'></i></span>
+                <?php else : ?>
+                  <?php foreach ($image as $img) : ?>
+                    <?= $img['tgl_upload']; ?>
+                  <?php endforeach; ?>
+                <?php endif; ?>
+              <?php endif; ?>
+              </td>
               <?php if ($status == 'A'): ?>                         
                 <td align='center'><span class='text-info'><i class='glyphicon glyphicon-ok'></i></span></td>
               <?php else: ?>
                 <td><center><span class="text-danger"><i class="glyphicon glyphicon-remove"></i></span></center></td>
               <?php endif; ?>
-              <td><center><span class="text-danger"><i class="glyphicon glyphicon-remove"></i></span></center></td>
+
+              <td align='center'>
+              <?php /* if rest api keuangan & perpus*/ ?>
+              <?php if (false !== array_search($nm_kategori, $requestCategory)) : ?>
+                <?php foreach ($requestMahasiswa as $child) : ?>
+                  <?php if ($child->request == 1): ?>
+                    <span class='text-info'><i class='glyphicon glyphicon-ok'></i></span>
+                  <?php else : ?>
+                    <span class='text-danger'><i class='glyphicon glyphicon-remove'></i></span>
+                  <?php endif; ?>
+                <?php endforeach; ?>
+
+              <?php /* if else */ ?>
+              <?php else : ?>
+                <?php $image = $obj->getImagesByCategory($nim, $kd_kategori); ?>
+                <?php if (!$image) : ?>
+                  <span class='text-danger'><i class='glyphicon glyphicon-remove'></i></span>
+                <?php else : ?>
+                  <?php foreach ($image as $img) : ?>
+                    <?php if ($img['status'] == 'A') : ?>
+                      <span class='text-info'><i class='glyphicon glyphicon-ok'></i></span>
+                    <?php else : ?>
+                      <span class='text-danger'><i class='glyphicon glyphicon-remove'></i></span>
+                    <?php endif; ?>
+                  <?php endforeach; ?>
+                <?php endif; ?>
+              <?php endif; ?>
+              </td>
+
               <td><center><a href="#" target="_blank"><button class="btn btn-info"> <i class="glyphicon glyphicon-search"> Lihat</i></button></a></center></td>
               <td>
                 <form action="" method="POST">
@@ -284,12 +318,30 @@ function hajar() {
           ?>              
           </tbody>
           <tfoot>
+          <?php 
+          $statusSelect = $obj->getStatusVerifikasiByNim($nim);
+          $actionStatus = array(); 
+          foreach($statusSelect as $status) {
+            $actionStatus[] = $status['nim'];
+          }
+          ?>
             <tr>
               <td colspan="7"> <center>
-                <form method="POST" action="">
-                  <input type="hidden" name="nim" value="">
+              <?php if (false !== array_search($nim, $actionStatus)) : ?>
+                <form method="POST" action="<?= base_url('update_status_verifikasi/'.$nim); ?>">
+              <?php else : ?>
+                <form method="POST" action="<?= base_url('add_status_verifikasi'); ?>">
+              <?php endif; ?>
+                  <input type="hidden" name="nim" value="<?= $nim ?>">
+                  <?php if($statusSelect) : ?>
+                    <?php foreach($statusSelect as $status) : ?>
+                      <input type="radio" name="hasil" value="Lolos" <?= ($status['status'] == "Lolos") ? 'checked':'' ?>>Lolos Verifikasi
+                      <input type="radio" name="hasil" value="Gagal" <?= ($status['status'] == "Gagal") ? 'checked':'' ?>>Gagal Verifikasi
+                    <?php endforeach; ?>
+                  <?php else : ?>
                     <input type="radio" name="hasil" value="Lolos">Lolos Verifikasi
                     <input type="radio" name="hasil" value="Gagal">Gagal Verifikasi
+                  <?php endif; ?>
                     <br>
                     <button type="submit" name="ubah_status" class="btn btn-danger">Simpan Verifikasi</button> 
                     <br>

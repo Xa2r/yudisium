@@ -64,4 +64,36 @@ class Select extends CI_Model
 
         return $data;
     }
+
+    public function getCategoryById($category_id)
+    {
+        $data = $this->db->get_where('sia.d_yud_kategori', array('kd_kategori' => $category_id))
+                ->result_array();
+
+        return $data;
+    }
+
+    public function getImagesByNim($nim)
+    {
+        $data = $this->db->get_where('sia.images_upload', array('nim' => $nim))
+                ->result_array();
+        
+        return $data;
+    }
+
+    public function getImagesByCategory($nim, $category_id)
+    {
+        $data = $this->db->get_where('sia.images_upload', array('nim' => $nim, 'id_kategori' => $category_id))
+                ->result_array();
+        
+        return $data;
+    }
+
+    public function getStatusVerifikasiByNim($nim)
+    {
+        $data = $this->db->get_where('sia.status_verifikasi', array('nim' => $nim))
+                ->result_array();
+        
+        return $data;
+    }
 }

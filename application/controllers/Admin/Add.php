@@ -69,4 +69,16 @@ class Add extends CI_Controller
             }
         }
     }
+
+    public function addStatusVerifikasi()
+    {
+        $auth = $this->Insert->statusVerifikasi();
+        if ($auth) {
+            $this->session->set_flashdata('success', 'Data berhasil disimpan.');
+            redirect('list_seleksi');
+        } else {
+            $this->session->set_flashdata('danger', 'Data gagal disimpan.');
+            redirect('list_seleksi');
+        }
+    }
 }
