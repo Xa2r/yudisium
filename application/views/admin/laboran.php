@@ -68,8 +68,7 @@ function hajar() {
 						<td align='center'><span class='text-danger'><i class='glyphicon glyphicon-remove'></i></span></td>
 					<?php endif; ?>
 					<td class="td-action">
-						<a title="Lihat Persyaratan" href="#" class="btn btn-info btn-xs"><i class="fas fa-search-plus"></i></a>
-						<a title="Ubah Status ke-aktif-an" href="#" class="btn btn-warning btn-xs"><i class="fas fa-edit"></i></a>
+						<a title="Cetak Surat" href="<?= base_url('cetak_bebeas_lab/'.$nim) ?>" class="btn btn-info btn-xs"><i class="fas fa-search-plus"></i></a>
 						<a title="Hapus" href="<?= base_url('remove_bebasLab/'.$nim) ?>" class="btn btn-danger btn-xs"><i class="fas fa-trash-alt"></i></a>
 					</td>  
 				</tr>
