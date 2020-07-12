@@ -77,8 +77,8 @@ $db['default'] = array(
 	'dsn'	=> '',
 	'hostname' => 'localhost',
 	'username' => 'postgres',
-	'password' => 'root',
-	'database' => 'alimin',
+	'password' => '1234',
+	'database' => 'stta',
 	'dbdriver' => 'postgre',
 	'dbprefix' => '',
 	'pconnect' => FALSE,
@@ -97,11 +97,11 @@ $db['default'] = array(
 );
 
 $db['pdo'] = array(
-	'dsn' => 'pgsql:host=localhost;port=5432;dbname=alimin;user=postgres;password=root',
+	'dsn' => 'pgsql:host=localhost;port=5432;dbname=stta;user=postgres;password=1234',
 	'hostname' => 'localhost',
 	'username' => 'postgres',
-	'password' => 'root',
-	'database' => 'alimin',
+	'password' => '1234',
+	'database' => 'stta',
 	'dbdriver' => 'pdo',
 	'dbprefix' => '',
 	'pconnect' => FALSE,
