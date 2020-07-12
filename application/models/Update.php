@@ -50,4 +50,28 @@ class Update extends CI_Model
 
         return $update;
     }
+
+    public function updateImage($nim, $upload, $kd_kategori)
+    {
+        $data = array(
+            'img' => $upload['file']['file_name']
+        );
+        $array = ['nim' => $nim, 'id_kategori' => $kd_kategori];
+        $this->db->where($array);
+        $update = $this->db->update('sia.images_upload', $data);
+
+        return $update;
+    }
+
+    public function updateStatusVerifikasi($nim)
+    {
+        $data = array(
+            'status' => $this->input->post('hasil', TRUE)
+        );
+        
+        $this->db->where('nim', $nim);
+        $update = $this->db->update('sia.status_verifikasi', $data);
+
+        return $update;
+    }
 }

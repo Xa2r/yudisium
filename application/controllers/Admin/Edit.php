@@ -19,4 +19,16 @@ class Edit extends CI_Controller
             redirect('kategory_yudisium');
         }
     }
+
+    public function updateStatusVerifikasi($nim)
+    {
+        $update = $this->Update->updateStatusVerifikasi($nim);
+        if ($update) {
+            $this->session->set_flashdata('success', 'Data berhasil disimpan.');
+            redirect('list_seleksi');
+        } else {
+            $this->session->set_flashdata('danger', 'Data gagal disimpan.');
+            redirect('list_seleksi');
+        }
+    }
 }

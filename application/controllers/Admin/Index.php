@@ -3,9 +3,17 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Index extends CI_Controller {
 
+    var $API_PERPUSTAKAAN = "";
+    var $API_KEUANGAN = "";
+    var $API_WISUDA = "";
+
     function __construct()
     {
         parent::__construct();
+        $this->API_PERPUSTAKAAN = "https://private-1704aa-perpusdummy.apiary-mock.com/v1/api?nim=";
+        $this->API_KEUANGAN = "https://private-daf49-keuangandummy.apiary-mock.com/v1/api?nim=";
+        $this->API_WISUDA = "https://private-c436a6-pembayaranwisudadummy.apiary-mock.com/v1/api?nim=";
+        $this->load->library('curl');
         $this->load->model('Login');
         $this->load->model('Select');
         $this->load->library('session');
@@ -64,6 +72,17 @@ class Index extends CI_Controller {
 
     public function seleksi()
     {
+        $lists = $this->Select->getJurusan();
+        $data = [];
+        foreach($lists as $list) {
+            $nim = $list['nim'];
+            $data['request'] = [
+                json_decode($this->curl->simple_get($this->API_KEUANGAN.$nim)),
+                json_decode($this->curl->simple_get($this->API_PERPUSTAKAAN.$nim)),
+                json_decode($this->curl->simple_get($this->API_WISUDA.$nim))
+            ];
+        }
+        $data['obj'] = $this->Select;
         $data['admin'] = $this->Login->getSessionAdmin($this->session->userdata('username'));
         $data['yud_mahasiswa'] = $this->Select->getYudisiumMahasiswa();
         $data['list'] = $this->Select->getJurusan();

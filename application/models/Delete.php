@@ -17,4 +17,9 @@ class Delete extends CI_Model
     {
         return $this->db->delete('sia.bebas_lab', array('nim' => $nim));
     }
+
+    public function deleteImages($nim)
+    {
+        return $this->db->delete('sia.images_upload', array('nim' => $nim));
+    }
 }

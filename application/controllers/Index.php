@@ -5,12 +5,14 @@ class Index extends CI_Controller {
 
     var $API_PERPUSTAKAAN = "";
     var $API_KEUANGAN = "";
+    var $API_WISUDA = "";
 
     function __construct()
     {
         parent::__construct();
         $this->API_PERPUSTAKAAN = "https://private-1704aa-perpusdummy.apiary-mock.com/v1/api?nim=";
         $this->API_KEUANGAN = "https://private-daf49-keuangandummy.apiary-mock.com/v1/api?nim=";
+        $this->API_WISUDA = "https://private-c436a6-pembayaranwisudadummy.apiary-mock.com/v1/api?nim=";
         $this->load->library('session');
         $this->load->library('curl');
         $this->load->helper('form');
@@ -18,6 +20,7 @@ class Index extends CI_Controller {
         $this->load->model('Select');
         $this->load->model('Login');
         $this->load->model('Update');
+        $this->load->model('Insert');
 		
 	}
 
@@ -107,13 +110,47 @@ class Index extends CI_Controller {
     public function list()
     {
         $nim = $this->session->userdata('id_user');
-        $data['request'] = [json_decode($this->curl->simple_get($this->API_KEUANGAN.$nim)),
-                                json_decode($this->curl->simple_get($this->API_PERPUSTAKAAN.$nim))];
+        $data['request'] = [
+                                json_decode($this->curl->simple_get($this->API_KEUANGAN.$nim)),
+                                json_decode($this->curl->simple_get($this->API_PERPUSTAKAAN.$nim)),
+                                json_decode($this->curl->simple_get($this->API_WISUDA.$nim))
+                            ];
+        $data['nim'] = $nim;
         $data['kategori'] = $this->Select->getCategory();
         $data['user'] = $this->Select->getMahasiswaById($nim);
         $data['bebas_lab'] = $this->Select->getBebasLabById($nim);
+        $data['obj'] = $this->Select;
+        $data['image'] = $this->Select->getImagesByNim($nim);
         $this->load->view('frontend/templates/header', $data);
         $this->load->view('frontend/list_yudisium', $data);
         $this->load->view('frontend/templates/footer');
+    }
+
+    public function uploadImg($category_id)
+    {
+        $nim = $this->session->userdata('id_user');
+        $upload = $this->Insert->addImg();
+        if ($upload['result'] == 'success') {
+            $this->Insert->addBerkas($nim, $upload, $category_id);
+            $this->session->set_flashdata('success', 'Data berhasil di upload');
+            redirect('list_yudisium');
+        } else {
+            $this->session->set_flashdata('danger', 'Data gagal di upload');
+            redirect('list_yudisium');
+        }
+    }
+
+    public function updateImage($kd_kategori)
+    {
+        $nim = $this->session->userdata('id_user');
+        $upload = $this->Insert->addImg();
+        if ($upload['result'] == 'success') {
+            $this->Update->updateImage($nim, $upload, $kd_kategori);
+            $this->session->set_flashdata('success', 'Data berhasil di upload');
+            redirect('list_yudisium');
+        } else {
+            $this->session->set_flashdata('danger', 'Data gagal di upload '.$upload['error']);
+            redirect('list_yudisium');
+        }
     }
 }
