@@ -60,6 +60,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
           </div><!--/.nav-collapse -->
         </div><!--/.container-fluid -->
       </nav>
+      <?php $nama = ''; ?>
       <?php foreach ($user as $data):
         $nim = $data['nim'];
         $nama = $data['nama'];
@@ -71,3 +72,17 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         </div>
       </div>
       <?php endforeach; ?>
+
+      <?php if($status_validation) : ?>
+        <?php foreach($status_validation as $validationStatus) : ?>
+          <?php if ($validationStatus['nim']) : ?>
+            <?php if ($validationStatus['status'] == 'Lolos') : ?>
+              <h1 class="display-4">selemat, <?= $nama; ?> berkas anda diterima</h1>
+              <a href="<?= base_url('cetak_surat_yudisium'); ?>" target="_blank"><button class="btn btn-info">Cetak Yudisium</button></a>
+            <?php else : ?>
+              <h1 class="display-4">Maaf, <?= $nama; ?> berkas anda tidak diterima</h1>
+            <?php endif; ?>
+          <?php endif; ?>
+        <?php endforeach; ?>
+      <?php endif; ?>
+

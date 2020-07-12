@@ -1,6 +1,8 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
+use Spipu\Html2Pdf\Html2Pdf;
+
 class Index extends CI_Controller {
 
     var $API_PERPUSTAKAAN = "";
@@ -59,6 +61,7 @@ class Index extends CI_Controller {
                 );
                 $this->session->set_userdata($data);
                 $nim = $this->session->userdata('id_user');
+                $data['status_validation'] = $this->Select->getStatusVerifikasiByNim($nim);
                 $data['user'] = $this->Select->getMahasiswaById($nim);
                  $this->load->view('frontend/templates/header', $data);
                 $this->load->view('frontend/home');
@@ -73,8 +76,9 @@ class Index extends CI_Controller {
     public function home()
     {
         $nim = $this->session->userdata('id_user');
-         $data['user'] = $this->Select->getMahasiswaById($nim);
-         $this->load->view('frontend/templates/header', $data);
+        $data['status_validation'] = $this->Select->getStatusVerifikasiByNim($nim);
+        $data['user'] = $this->Select->getMahasiswaById($nim);
+        $this->load->view('frontend/templates/header', $data);
         $this->load->view('frontend/home');
         $this->load->view('frontend/templates/footer');
     }
@@ -88,6 +92,7 @@ class Index extends CI_Controller {
     public function biodata()
     {
         $nim = $this->session->userdata('id_user');
+        $data['status_validation'] = $this->Select->getStatusVerifikasiByNim($nim);
         $data['user'] = $this->Select->getMahasiswaById($nim);
         $this->load->view('frontend/templates/header', $data);
         $this->load->view('frontend/form_biodata', $data);
@@ -121,6 +126,7 @@ class Index extends CI_Controller {
         $data['bebas_lab'] = $this->Select->getBebasLabById($nim);
         $data['obj'] = $this->Select;
         $data['image'] = $this->Select->getImagesByNim($nim);
+        $data['status_validation'] = $this->Select->getStatusVerifikasiByNim($nim);
         $this->load->view('frontend/templates/header', $data);
         $this->load->view('frontend/list_yudisium', $data);
         $this->load->view('frontend/templates/footer');
@@ -151,6 +157,25 @@ class Index extends CI_Controller {
         } else {
             $this->session->set_flashdata('danger', 'Data gagal di upload '.$upload['error']);
             redirect('list_yudisium');
+        }
+    }
+
+    function cetakYudisium(){
+        $nim = $this->session->userdata('id_user');
+        $data['mahasiswa'] = $this->Select->getMahasiswaById($nim);
+        try {
+            ob_start();
+            $this->load->view('frontend/templates/surat_yudisium', $data);
+            $content = ob_get_clean();
+        
+            $html2pdf = new Html2Pdf('P', 'A4', 'en');
+            $html2pdf->writeHTML($content);
+            $html2pdf->output('surat_yudisium.pdf');
+        } catch (Html2PdfException $e) {
+            $html2pdf->clean();
+        
+            $formatter = new ExceptionFormatter($e);
+            echo $formatter->getHtmlMessage();
         }
     }
 }

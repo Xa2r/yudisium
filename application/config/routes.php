@@ -85,3 +85,4 @@ $route['logout_user'] = 'index/logout';
 $route['update_user'] = 'index/update';
 $route['upload_image/(:num)'] = 'index/uploadImg/$1';
 $route['updateImage/(:num)'] = 'index/updateImage/$1';
+$route['cetak_surat_yudisium'] = 'index/cetakYudisium';
