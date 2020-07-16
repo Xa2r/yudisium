@@ -87,6 +87,18 @@ body .navbar-inverse .navbar-nav > .active > a:focus{
 .page-content select{
 	padding: 3px 0 3px 5px;
 }
+
+.page-content.list-seleksi .modal-content{
+	padding: 15px;
+}
+.form-group-radio input{
+	margin-right: 10px !important;
+}
+.page-content.list-seleksi .ket-btn {
+	font-size: 12px;
+}
+
+
 #example_wrapper table{
 	margin-bottom: 10px;
 }

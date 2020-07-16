@@ -12,3 +12,18 @@
 	    $("body").toggleClass("menu-on");
 	  });
 });
+
+
+
+// pop up notify
+$(".notify-popup").click(function(e) {
+	if (!$(e.target).is(".notify-popup *")) {
+		if ($('.notify-popup').is(':visible')) {
+			$('.notify-popup').hide();
+		}
+	}
+});
+//close the popup
+$(".close-popup, .popup-footer button").click(function(){
+	$('.notify-popup').hide();
+});

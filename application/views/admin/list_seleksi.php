@@ -1,4 +1,4 @@
-<div class="page-content">
+<div class="page-content list-seleksi">
 <div class="post text">
       <script>
 var xmlHttp
@@ -60,7 +60,7 @@ function hajar() {
                               <td><?= $nama; ?></td>              
                 <td><?= $tgl_aktif; ?></td>
                               <td><?= $tgl_selesai; ?></td>
-                              <td><?= $status; ?></td>
+                              <td style="text-align: center;"><?= $status; ?></td>
                 <td class="td-action">
                     <a title="Lihat Persyaratan" class="btn btn-info btn-xs" data-toggle="modal" href="#" data-target="#persaratan<?= $nim; ?>">
                       <i class="fas fa-search-plus"></i>
@@ -245,7 +245,7 @@ function hajar() {
             $requestMahasiswa = $value->mahasiswa;
           } ?>
             <tr>
-              <td><?= $no; ?></td>
+              <td style="text-align: center;"><?= $no; ?></td>
               <td><?= $nm_kategori ?></td>
               <td align='center'>
               <?php /* if rest api keuangan & perpus*/ ?>
@@ -300,14 +300,14 @@ function hajar() {
               <?php endif; ?>
               </td>
 
-              <td><center><a href="#" target="_blank"><button class="btn btn-info"> <i class="glyphicon glyphicon-search"> Lihat</i></button></a></center></td>
+              <td><center><a href="#" target="_blank"><button class="btn btn-info"> <i class="glyphicon glyphicon-search"></i></button></a></center></td>
               <td>
                 <form action="" method="POST">
                   <input type="hidden" name="nim" value="">
                   <input type="hidden" name="kdk" value="16">
                   <input type="hidden" name="status_cek" value="B">
-                  <button type="submit" class="btn btn-primary" name="tombol_setuju" value="Setujui"> 
-                    <span class="glyphicon glyphicon-pushpin" aria-hidden="true"> Ubah</span>
+                  <button type="submit" class="btn btn-warning" name="tombol_setuju" value="Setujui"> 
+                    <i class="fas fa-edit"></i>
                   </button>
                 </form>
               </td>
@@ -335,17 +335,16 @@ function hajar() {
                   <input type="hidden" name="nim" value="<?= $nim ?>">
                   <?php if($statusSelect) : ?>
                     <?php foreach($statusSelect as $status) : ?>
-                      <input type="radio" name="hasil" value="Lolos" <?= ($status['status'] == "Lolos") ? 'checked':'' ?>>Lolos Verifikasi
-                      <input type="radio" name="hasil" value="Gagal" <?= ($status['status'] == "Gagal") ? 'checked':'' ?>>Gagal Verifikasi
+                      <div class="form-group-radio"> <input type="radio" name="hasil" value="Lolos" <?= ($status['status'] == "Lolos") ? 'checked':'' ?>>Lolos Verifikasi</div>
+                      <div class="form-group-radio"> <input type="radio" name="hasil" value="Gagal" <?= ($status['status'] == "Gagal") ? 'checked':'' ?>>Gagal Verifikasi</div>
                     <?php endforeach; ?>
                   <?php else : ?>
-                    <input type="radio" name="hasil" value="Lolos">Lolos Verifikasi
-                    <input type="radio" name="hasil" value="Gagal">Gagal Verifikasi
+                    <div class="form-group-radio"><input type="radio" name="hasil" value="Lolos">Lolos Verifikasi</div>
+                    <div class="form-group-radio"><input type="radio" name="hasil" value="Gagal">Gagal Verifikasi</div>
                   <?php endif; ?>
+                    <button type="submit" name="ubah_status" class="btn btn-primary cta">Simpan Verifikasi</button> 
                     <br>
-                    <button type="submit" name="ubah_status" class="btn btn-danger">Simpan Verifikasi</button> 
-                    <br>
-                    *Klik tombol ini jika sudah melengkapi semua persyaratan.
+                    <span class="ket-btn"> *Klik tombol ini jika sudah melengkapi semua persyaratan. </span>
                 </form></center>
               </td>
             </tr>
