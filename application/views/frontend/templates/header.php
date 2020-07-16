@@ -74,15 +74,34 @@ defined('BASEPATH') OR exit('No direct script access allowed');
       <?php endforeach; ?>
 
       <?php if($status_validation) : ?>
-        <?php foreach($status_validation as $validationStatus) : ?>
-          <?php if ($validationStatus['nim']) : ?>
-            <?php if ($validationStatus['status'] == 'Lolos') : ?>
-              <h1 class="display-4">selemat, <?= $nama; ?> berkas anda diterima</h1>
-              <a href="<?= base_url('cetak_surat_yudisium'); ?>" target="_blank"><button class="btn btn-info">Cetak Yudisium</button></a>
-            <?php else : ?>
-              <h1 class="display-4">Maaf, <?= $nama; ?> berkas anda tidak diterima</h1>
-            <?php endif; ?>
-          <?php endif; ?>
-        <?php endforeach; ?>
-      <?php endif; ?>
+        
+      <!-- popup-begin -->
+      <div class="notify-popup">
+          <div class="notify-popup-content">
+            <div class="popup-header">
+              <span class="popup-title">STATUS</span>
+              <span class="close-popup">x</span>	
+            </div>
+            <div class="popup-content">
+              <?php foreach($status_validation as $validationStatus) : ?>
+                <?php if ($validationStatus['nim']) : ?>
+                  <?php if ($validationStatus['status'] == 'Lolos') : ?>
+                    <h1 class="notify-text">
+                      <strong>Selemat!</strong>
+                      <span><?= $nama; ?></span>
+                      <span>berkas anda diterima</span>
+                    </h1>
+                    <a href="<?= base_url('cetak_surat_yudisium'); ?>" target="_blank"><button class="btn btn-info">Cetak Yudisium</button></a>
+                  <?php else : ?>
+                    <h1 class="notify-text">Maaf, <?= $nama; ?> berkas anda tidak diterima</h1>
+                  <?php endif; ?>
+                <?php endif; ?>
+              <?php endforeach; ?>
+            </div>
+            <div class="popup-footer">
+              <button type="button" name="button-close" class="btn btn-success">OKE</button>
+            </div>
+          </div>
+      </div>
 
+      <?php endif; ?>
