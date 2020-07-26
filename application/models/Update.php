@@ -74,4 +74,17 @@ class Update extends CI_Model
 
         return $update;
     }
+
+    public function updateStatusImage($status, $nim, $kd_kategori)
+    {
+        $data = array(
+            'status' => $status
+        );
+
+        $array = ['nim' => $nim, 'id_kategori' => $kd_kategori];
+        $this->db->where($array);
+        $update = $this->db->update('sia.images_upload', $data);
+
+        return $update;
+    }
 }

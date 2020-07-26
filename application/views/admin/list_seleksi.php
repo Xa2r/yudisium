@@ -300,9 +300,14 @@ function hajar() {
               <?php endif; ?>
               </td>
 
-              <td><center><a href="#" target="_blank"><button class="btn btn-info"> <i class="glyphicon glyphicon-search"></i></button></a></center></td>
+              <?php $image = $obj->getImagesByCategory($nim, $kd_kategori); ?>
+              <td><center><a href="
+              <?php foreach ($image as $img) : ?>
+                <?= base_url('./images/'.$img['img']) ?>
+              <?php endforeach; ?>
+              " target="_blank"><button class="btn btn-info"> <i class="glyphicon glyphicon-search"></i></button></a></center></td>
               <td>
-                <form action="" method="POST">
+                <form action="<?= base_url('update_status_image/'.$nim.'/'.$kd_kategori) ?>" method="POST">
                   <input type="hidden" name="nim" value="">
                   <input type="hidden" name="kdk" value="16">
                   <input type="hidden" name="status_cek" value="B">

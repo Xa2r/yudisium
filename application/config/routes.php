@@ -73,6 +73,7 @@ $route['update_bebasLab/(:num)'] = 'admin/edit/updateBebasLab/$1';
 $route['add_status_verifikasi'] = 'admin/add/addStatusVerifikasi';
 $route['update_status_verifikasi/(:num)'] = 'admin/edit/updateStatusVerifikasi/$1';
 $route['cetak_bebeas_lab/(:num)'] = 'admin/index/cetakBebasLab/$1';
+$route['update_status_image/(:num)/(:any)'] = 'admin/edit/updateStatusImage/$1/$2';
 
 /* frontend */
 $route['index'] = 'index';
