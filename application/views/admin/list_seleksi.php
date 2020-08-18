@@ -239,10 +239,10 @@ function hajar() {
 
           <?php
           $requestCategory = array();
-          $requestMahasiswa = array(); 
+          // $requestMahasiswa = array(); 
           foreach ($request as $index => $value) {
             $requestCategory[] = $value->nama_Category;
-            $requestMahasiswa = $value->mahasiswa;
+            // $requestMahasiswa = $value->mahasiswa;
           } ?>
             <tr>
               <td style="text-align: center;"><?= $no; ?></td>
@@ -250,8 +250,12 @@ function hajar() {
               <td align='center'>
               <?php /* if rest api keuangan & perpus*/ ?>
               <?php if (false !== array_search($nm_kategori, $requestCategory)) : ?>
-                <?php foreach ($requestMahasiswa as $child) : ?>
-                  <?= $child->tangga_bayar; ?>
+                <?php foreach ($request as $index => $value) : ?>
+                  <?php if ($nm_kategori == $value->nama_Category) : ?>
+                    <?php foreach ($value->mahasiswa as $child) : ?>
+                      <?= $child->tanggal_bayar; ?>
+                    <?php endforeach; ?>
+                  <?php endif; ?>
                 <?php endforeach; ?>
 
               <?php /* if else */ ?>
@@ -275,12 +279,16 @@ function hajar() {
               <td align='center'>
               <?php /* if rest api keuangan & perpus*/ ?>
               <?php if (false !== array_search($nm_kategori, $requestCategory)) : ?>
-                <?php foreach ($requestMahasiswa as $child) : ?>
-                  <?php if ($child->request == 1): ?>
-                    <span class='text-info'><i class='glyphicon glyphicon-ok'></i></span>
-                  <?php else : ?>
-                    <span class='text-danger'><i class='glyphicon glyphicon-remove'></i></span>
-                  <?php endif; ?>
+                <?php foreach ($request as $index => $value) : ?>
+                  <?php if ($nm_kategori == $value->nama_Category) : ?>
+                  <?php foreach ($value->mahasiswa as $child) : ?>
+                    <?php if ($child->request == 1): ?>
+                      <span class='text-info'><i class='glyphicon glyphicon-ok'></i></span>
+                    <?php else : ?>
+                      <span class='text-danger'><i class='glyphicon glyphicon-remove'></i></span>
+                    <?php endif; ?>
+                  <?php endforeach; ?>
+                    <?php endif; ?>
                 <?php endforeach; ?>
 
               <?php /* if else */ ?>

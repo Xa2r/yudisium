@@ -72,22 +72,24 @@
                   <td align='center'>
                     <?php
                     $requestCategory = array();
-                    $requestMahasiswa = array(); 
-                    foreach ($request as $index => $value) {
-                      $requestCategory[] = $value->nama_Category;
-                      $requestMahasiswa = $value->mahasiswa;
-                    } ?>
+                    foreach ($request as $index => $value) : ?>
+                    <?php $requestCategory[] = $value->nama_Category; ?>
+                    <?php endforeach; ?>
 
                     <?php /* if rest api keuangan & perpus*/ ?>
                     <?php if (false !== array_search($nama_kategori, $requestCategory)) : ?>
-                      <?php foreach ($requestMahasiswa as $child) : ?>
+                     <?php foreach ($request as $index => $value) : ?>
+                      <?php if ($nama_kategori == $value->nama_Category) : ?>
+                      <?php foreach ($value->mahasiswa as $child) : ?>
                         <?php if ($child->request == 1): ?>
                           <span class='text-info'><i class='glyphicon glyphicon-ok'></i></span>
                         <?php else : ?>
                           <span class='text-danger'><i class='glyphicon glyphicon-remove'></i></span>
                         <?php endif; ?>
                       <?php endforeach; ?>
-
+                        <?php endif; ?>
+                    <?php endforeach; ?>
+                        
                     <?php /* if else */ ?>
                     <?php else : ?>
                       <?php $image = $obj->getImagesByCategory($nim, $kd_kategori); ?>
