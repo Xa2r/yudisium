@@ -8,13 +8,15 @@ class Index extends CI_Controller {
     var $API_PERPUSTAKAAN = "";
     var $API_KEUANGAN = "";
     var $API_WISUDA = "";
+    var $API_LABORATORIUM = "";
 
     function __construct()
     {
         parent::__construct();
-        $this->API_PERPUSTAKAAN = "https://private-1704aa-perpusdummy.apiary-mock.com/v1/api?nim=";
-        $this->API_KEUANGAN = "https://private-daf49-keuangandummy.apiary-mock.com/v1/api?nim=";
-        $this->API_WISUDA = "https://private-c436a6-pembayaranwisudadummy.apiary-mock.com/v1/api?nim=";
+        $this->API_PERPUSTAKAAN = "https://private-1704aa-perpusdummy.apiary-mock.com/rest/V1/perpustakaan?nim=";
+        $this->API_KEUANGAN = "https://private-daf49-keuangandummy.apiary-mock.com/rest/V1/keuangan?nim=";
+        $this->API_WISUDA = "https://private-c436a6-pembayaranwisudadummy.apiary-mock.com/rest/V1/wisuda?nim=";
+        $this->API_LABORATORIUM = "https://private-e11bed-laboratoriumdummy.apiary-mock.com/rest/V1/laboratorium?nim=";
         $this->load->library('curl');
         $this->load->model('Login');
         $this->load->model('Select');
@@ -81,7 +83,8 @@ class Index extends CI_Controller {
             $data['request'] = [
                 json_decode($this->curl->simple_get($this->API_KEUANGAN.$nim)),
                 json_decode($this->curl->simple_get($this->API_PERPUSTAKAAN.$nim)),
-                json_decode($this->curl->simple_get($this->API_WISUDA.$nim))
+                json_decode($this->curl->simple_get($this->API_WISUDA.$nim)),
+                json_decode($this->curl->simple_get($this->API_LABORATORIUM.$nim))
             ];
         }
         $data['obj'] = $this->Select;

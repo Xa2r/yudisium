@@ -241,7 +241,10 @@ function hajar() {
           $requestCategory = array();
           // $requestMahasiswa = array(); 
           foreach ($request as $index => $value) {
-            $requestCategory[] = $value->nama_Category;
+            if (!$value) {
+              continue;
+            }
+            $requestCategory[] = $value->nama;
             // $requestMahasiswa = $value->mahasiswa;
           } ?>
             <tr>
@@ -251,10 +254,9 @@ function hajar() {
               <?php /* if rest api keuangan & perpus*/ ?>
               <?php if (false !== array_search($nm_kategori, $requestCategory)) : ?>
                 <?php foreach ($request as $index => $value) : ?>
-                  <?php if ($nm_kategori == $value->nama_Category) : ?>
-                    <?php foreach ($value->mahasiswa as $child) : ?>
-                      <?= $child->tanggal_bayar; ?>
-                    <?php endforeach; ?>
+                <?php if (!$value) {continue;} ?>
+                  <?php if ($nm_kategori == $value->nama) : ?>
+                      <?= $value->data->tanggal_bebas; ?>
                   <?php endif; ?>
                 <?php endforeach; ?>
 
@@ -280,14 +282,13 @@ function hajar() {
               <?php /* if rest api keuangan & perpus*/ ?>
               <?php if (false !== array_search($nm_kategori, $requestCategory)) : ?>
                 <?php foreach ($request as $index => $value) : ?>
-                  <?php if ($nm_kategori == $value->nama_Category) : ?>
-                  <?php foreach ($value->mahasiswa as $child) : ?>
-                    <?php if ($child->request == 1): ?>
+                  <?php if (!$value) {continue;} ?>
+                  <?php if ($nm_kategori == $value->nama) : ?>
+                    <?php if ($value->data->status == 1): ?>
                       <span class='text-info'><i class='glyphicon glyphicon-ok'></i></span>
                     <?php else : ?>
                       <span class='text-danger'><i class='glyphicon glyphicon-remove'></i></span>
                     <?php endif; ?>
-                  <?php endforeach; ?>
                     <?php endif; ?>
                 <?php endforeach; ?>
 
